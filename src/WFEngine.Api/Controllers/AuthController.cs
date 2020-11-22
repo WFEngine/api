@@ -3,7 +3,7 @@
     /// <summary>
     /// Manages Session and User Transaction
     /// </summary>
-    public class Auth : BaseController
+    public class AuthController : BaseController
     {
     }
 }
