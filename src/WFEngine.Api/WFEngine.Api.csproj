@@ -21,4 +21,11 @@
     <Folder Include="Resources\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\api-identity-server\src\IdentityServer\IdentityServer.csproj" />
+    <ProjectReference Include="..\WFEngine.Bootstrapper\WFEngine.Bootstrapper.csproj" />
+    <ProjectReference Include="..\WFEngine.Core\WFEngine.Core.csproj" />
+    <ProjectReference Include="..\WFEngine.Service\WFEngine.Service.csproj" />
+  </ItemGroup>
+
 </Project>
