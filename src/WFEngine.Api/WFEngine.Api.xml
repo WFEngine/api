@@ -4,6 +4,11 @@
         <name>WFEngine.Api</name>
     </assembly>
     <members>
+        <member name="T:WFEngine.Api.Controllers.AuthController">
+            <summary>
+            Manages Session and User Transaction
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Controllers.BaseController">
             <summary>
             
@@ -19,6 +24,29 @@
             <summary>
             Constructor
             </summary>
+        </member>
+        <member name="T:WFEngine.Api.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Startup.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:WFEngine.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
         </member>
     </members>
 </doc>

@@ -15,11 +15,13 @@ namespace WFEngine.Core.Utilities
             }
         }
 
-        IConfiguration configuration;
+        readonly IConfiguration configuration;
 
         private ConnectionInfo()
         {
             configuration = EnvironmentManager.Instance.GetConfiguration();
         }
+
+        public string MySQLConnectionString => (string)configuration.GetValue(typeof(string),"mysql_connection");
     }
 }

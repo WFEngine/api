@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0" NoWarn="NU1605" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.0" NoWarn="NU1605" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
@@ -22,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\api-identity-server\src\IdentityServer\IdentityServer.csproj" />
     <ProjectReference Include="..\WFEngine.Bootstrapper\WFEngine.Bootstrapper.csproj" />
     <ProjectReference Include="..\WFEngine.Core\WFEngine.Core.csproj" />
     <ProjectReference Include="..\WFEngine.Service\WFEngine.Service.csproj" />
