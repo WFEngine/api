@@ -6,19 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
-    <PackageReference Include="environment.net.core" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="appsettings.development.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="appsettings.production.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="appsettings.staging.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <ProjectReference Include="..\WFEngine.Environment\WFEngine.Environment.csproj" />
   </ItemGroup>
 
 </Project>

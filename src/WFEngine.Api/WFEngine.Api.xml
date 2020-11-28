@@ -9,7 +9,162 @@
             Manages Session and User Transaction
             </summary>
         </member>
+        <member name="M:WFEngine.Api.Controllers.AuthController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.OrganizationResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.UserResource})">
+            <summary>
+            
+            </summary>
+            <param name="_uow"></param>
+            <param name="_mapper"></param>
+            <param name="_baseLocalizer"></param>
+            <param name="_organizationLocalizer"></param>
+            <param name="_userLocalizer"></param>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.AuthController.LogIn(WFEngine.Api.Dto.Request.Auth.LoginRequestDTO)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.AuthController.Register(WFEngine.Api.Dto.Request.Auth.RegisterRequestDTO)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
         <member name="T:WFEngine.Api.Controllers.BaseController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Controllers.BaseController.uow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Controllers.BaseController.mapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Controllers.BaseController.baseLocalizer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.BaseController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource})">
+            <summary>
+            
+            </summary>
+            <param name="_uow"></param>
+            <param name="_mapper"></param>
+            <param name="_baseLocalizer"></param>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.BaseController.Ok``1(``0,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.BaseController.NotFound``1(``0,System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Auth.LoginRequestDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.LoginRequestDTO.LoginType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.LoginRequestDTO.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.LoginRequestDTO.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Auth.LoginRequestDTOValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.Auth.LoginRequestDTOValidator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTO.OrganizationName">
+            <summary>
+            User Organization Name
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTO.Name">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTO.Email">
+            <summary>
+            User Email Address
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTO.Password">
+            <summary>
+            User Password
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTO.PhoneNumber">
+            <summary>
+            User Phone Number
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTO.Avatar">
+            <summary>
+            User Avatar
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTOValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTOValidator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Auth.RegisterResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.RegisterResponse.OrganizationId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.RegisterResponse.UserId">
             <summary>
             
             </summary>
@@ -20,9 +175,29 @@
             </summary>
             <typeparam name="T"></typeparam>
         </member>
+        <member name="P:WFEngine.Api.Models.BaseResult`1.Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Models.BaseResult`1.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Models.BaseResult`1.StatusCode">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:WFEngine.Api.Models.BaseResult`1.#ctor">
             <summary>
             Constructor
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.BaseResource">
+            <summary>
+            
             </summary>
         </member>
         <member name="T:WFEngine.Api.Startup">

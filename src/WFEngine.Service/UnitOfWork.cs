@@ -4,6 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using WFEngine.Core.Interfaces;
 using WFEngine.Core.Utilities;
+using WFEngine.Service.Repositories;
 
 namespace WFEngine.Service
 {
@@ -12,7 +13,11 @@ namespace WFEngine.Service
         IDbTransaction transaction;
         IDbConnection connection;
 
+        IOrganizationRepository _organization;
+        IUserRepository _user;
+
         bool disposed;
+
 
         public UnitOfWork()
         {
@@ -26,6 +31,22 @@ namespace WFEngine.Service
             catch (MySqlException ex)
             {
                 Debug.WriteLine(ex);
+            }
+        }
+
+        public IOrganizationRepository Organization
+        {
+            get
+            {
+                return _organization ?? (_organization = new OrganizationRepository(transaction));
+            }
+        }
+
+        public IUserRepository User
+        {
+            get
+            {
+                return _user ?? (_user = new UserRepository(transaction));
             }
         }
 
@@ -50,7 +71,7 @@ namespace WFEngine.Service
             }
             return rtn;
         }
-       
+
 
         public bool Rollback()
         {

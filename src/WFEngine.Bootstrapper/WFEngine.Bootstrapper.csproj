@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WFEngine.Core\WFEngine.Core.csproj" />
+    <ProjectReference Include="..\WFEngine.Service\WFEngine.Service.csproj" />
   </ItemGroup>
 
 </Project>

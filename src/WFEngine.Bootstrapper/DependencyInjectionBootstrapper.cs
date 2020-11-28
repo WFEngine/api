@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using WFEngine.Core.Interfaces;
 using WFEngine.Service;
+using WFEngine.Service.Repositories;
 
 namespace WFEngine.Bootstrapper
 {
@@ -10,6 +11,8 @@ namespace WFEngine.Bootstrapper
         {
             services.AddScoped<IDbContext, DbContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IOrganizationRepository, OrganizationRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             return services;
         }
     }

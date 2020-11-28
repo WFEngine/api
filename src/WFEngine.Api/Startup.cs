@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using WFEngine.Api.Dto.Request.Auth;
 using WFEngine.Bootstrapper;
 
 namespace WFEngine.Api
@@ -31,7 +32,8 @@ namespace WFEngine.Api
             services.AddMapper(typeof(Startup));
             mvcBuilder.AddFluentValidatorBootstrapper(new List<Type>
             {
-
+                typeof(RegisterRequestDTO),
+                typeof(LoginRequestDTO)
             });
             services.AddDependencyInjection();
             services.AddLocalizationMessage();

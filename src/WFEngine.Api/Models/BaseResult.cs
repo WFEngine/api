@@ -9,8 +9,17 @@ namespace WFEngine.Api.Models
     /// <typeparam name="T"></typeparam>
     public class BaseResult<T>
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public T Data { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public string Message { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public HttpStatusCode StatusCode { get; set; }
 
         /// <summary>

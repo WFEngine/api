@@ -1,5 +1,6 @@
-﻿using environment.net.core;
+﻿
 using Microsoft.Extensions.Configuration;
+using WFEngine.Environment;
 
 namespace WFEngine.Core.Utilities
 {
@@ -15,9 +16,9 @@ namespace WFEngine.Core.Utilities
                     _instance = new GithubOptions();
                 return _instance;
             }
-        }        
+        }
 
-        public string ClientId => (string)configuration.GetValue(typeof(string),"github_client_id");
+        public string ClientId => (string)configuration.GetValue(typeof(string), "github_client_id");
 
         public string RedirectUrl => (string)configuration.GetValue(typeof(string), "github_redirect_url");
 
@@ -33,7 +34,7 @@ namespace WFEngine.Core.Utilities
 
         private GithubOptions()
         {
-            EnvironmentManager environmentManager = EnvironmentManager.Instance;
+            WFEnvironment environmentManager = WFEnvironment.Instance;
             configuration = environmentManager.GetConfiguration();
         }
     }

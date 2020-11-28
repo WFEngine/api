@@ -16,7 +16,7 @@ namespace WFEngine.Service.Repositories
         {
             get
             {
-                return _instance ?? (_instance = new DbContext());
+                return _instance ?? (_instance = new DbContext(_transaction));
             }
         }
 

@@ -281,3 +281,6 @@ obj/
 /wwwroot/node_modules
 
 # End of https://www.toptal.com/developers/gitignore/api/aspnetcore,dotnetcore
+src/WFEngine.Environment/appsettings.development.json
+src/WFEngine.Environment/appsettings.production.json
+src/WFEngine.Environment/appsettings.staging.json

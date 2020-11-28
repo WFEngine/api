@@ -1,5 +1,5 @@
-﻿using environment.net.core;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using WFEngine.Environment;
 
 namespace WFEngine.Core.Utilities
 {
@@ -19,9 +19,9 @@ namespace WFEngine.Core.Utilities
 
         private ConnectionInfo()
         {
-            configuration = EnvironmentManager.Instance.GetConfiguration();
+            WFEnvironment environment = WFEnvironment.Instance;
+            configuration = environment.GetConfiguration();
         }
-
         public string MySQLConnectionString => (string)configuration.GetValue(typeof(string),"mysql_connection");
     }
 }

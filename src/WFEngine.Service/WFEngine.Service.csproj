@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.22" />
+    <PackageReference Include="NETCore.Encrypt" Version="2.0.9" />
+    <PackageReference Include="StackExchange.Redis" Version="2.2.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\WFEngine.Core\WFEngine.Core.csproj" />
   </ItemGroup>
 
