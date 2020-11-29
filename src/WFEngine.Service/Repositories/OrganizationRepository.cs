@@ -29,5 +29,13 @@ namespace WFEngine.Service.Repositories
                 return new SuccessResult();
             return new ErrorResult(Messages.Organization.NotCreatedOrganization);            
         }
+
+        public IDataResult<Organization> FindById(int id)
+        {
+            var organization = connection.ExecuteCommand<Organization>("SELECT * FROM organization WHERE Id = @id AND Status = 1", id)?.FirstOrDefault();
+            if (organization != null)
+                return new SuccessDataResult<Organization>(organization);
+            return new ErrorDataResult<Organization>(null, Messages.Organization.NotFoundOrganization);
+        }
     }
 }

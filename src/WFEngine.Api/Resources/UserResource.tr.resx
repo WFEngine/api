@@ -120,6 +120,9 @@
   <data name="AlreadyExistsEmail" xml:space="preserve">
     <value>Böyle bir email adresi zaten mevcut</value>
   </data>
+  <data name="LoginUnsuccessful" xml:space="preserve">
+    <value>Giriş yapılamadı</value>
+  </data>
   <data name="NotCreatedUser" xml:space="preserve">
     <value>Kullanıcı oluşturulamadı</value>
   </data>

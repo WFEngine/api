@@ -4,6 +4,16 @@
         <name>WFEngine.Api</name>
     </assembly>
     <members>
+        <member name="T:WFEngine.Api.AutoMapper.MapperProfile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.AutoMapper.MapperProfile.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Controllers.AuthController">
             <summary>
             Manages Session and User Transaction
@@ -31,6 +41,20 @@
             
             </summary>
             <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.AuthController.GithubAuthorize(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="code"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.AuthController.GetUser">
+            <summary>
+            
+            </summary>
             <returns></returns>
         </member>
         <member name="T:WFEngine.Api.Controllers.BaseController">
@@ -154,6 +178,121 @@
             
             </summary>
         </member>
+        <member name="T:WFEngine.Api.Dto.Response.Auth.GetUserResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.GetUserResponse.OrganizationId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.GetUserResponse.OrganizationName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.GetUserResponse.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.GetUserResponse.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.GetUserResponse.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.GetUserResponse.PhoneNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.GetUserResponse.Avatar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.GetUserResponse.TwoFactorEnabled">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.GetUserResponse.EmailVerificated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Auth.LoginResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.OrganizationId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.OrganizationName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.PhoneNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.Avatar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.TwoFactorEnabled">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.EmailVerificated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.Token">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.ExpireDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.RedirectUrl">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Dto.Response.Auth.RegisterResponse">
             <summary>
             
@@ -168,6 +307,46 @@
             <summary>
             
             </summary>
+        </member>
+        <member name="T:WFEngine.Api.Filters.WFAllowAnonymousAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFAllowAnonymousAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFAllowAnonymousAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:WFEngine.Api.Filters.WFAuthorizeAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFAuthorizeAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFAuthorizeAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFAuthorizeAttribute.UnAuthorized(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
         </member>
         <member name="T:WFEngine.Api.Models.BaseResult`1">
             <summary>

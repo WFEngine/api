@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
 using System;
 using System.Net;
+using WFEngine.Api.Filters;
 using WFEngine.Api.Models;
 using WFEngine.Core.Interfaces;
 using WFEngine.Core.Utilities;
@@ -14,6 +15,7 @@ namespace WFEngine.Api.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+    [WFAuthorize]
     public class BaseController : ControllerBase
     {
         /// <summary>

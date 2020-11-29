@@ -123,4 +123,7 @@
   <data name="Successful" xml:space="preserve">
     <value>İşleminiz başarıyla tamamlandı</value>
   </data>
+  <data name="UnAuthorized" xml:space="preserve">
+    <value>Yetkiniz bulunamadı</value>
+  </data>
 </root>

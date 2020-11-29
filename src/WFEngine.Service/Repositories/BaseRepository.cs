@@ -1,6 +1,7 @@
 ﻿using StackExchange.Redis;
 using System.Data;
 using WFEngine.Core.Interfaces;
+using WFEngine.Core.Utilities;
 
 namespace WFEngine.Service.Repositories
 {
@@ -24,6 +25,11 @@ namespace WFEngine.Service.Repositories
         {
             get
             {
+                if(_cache == null)
+                {
+                    var connectionIfo = ConnectionInfo.Instance;
+                    _cache = ConnectionMultiplexer.Connect(connectionIfo.RedisConnectionString);
+                }
                 return _cache;
             }
         }

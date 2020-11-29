@@ -17,5 +17,11 @@ namespace WFEngine.Core.Interfaces
         /// <param name="organization"></param>
         /// <returns></returns>
         IResult Insert(Organization organization);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        IDataResult<Organization> FindById(int id);
      }
 }

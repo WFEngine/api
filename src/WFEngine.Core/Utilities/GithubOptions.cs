@@ -28,6 +28,8 @@ namespace WFEngine.Core.Utilities
 
         public string State => (string)configuration.GetValue(typeof(string), "github_state");
 
+        public string ClientSecret => (string)configuration.GetValue(typeof(string), "github_client_secret");
+
         public string AllowSignUp => "true";
 
         readonly IConfiguration configuration;

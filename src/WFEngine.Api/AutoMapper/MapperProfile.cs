@@ -4,8 +4,14 @@ using WFEngine.Core.Entities;
 
 namespace WFEngine.Api.AutoMapper
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MapperProfile : Profile
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public MapperProfile()
         {
             CreateMap<RegisterRequestDTO, Organization>().ForMember(vm => vm.Name, m => m.MapFrom(u => u.OrganizationName));

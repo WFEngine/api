@@ -120,6 +120,9 @@
   <data name="AlreadyExistsEmail" xml:space="preserve">
     <value>An email address like this already exists</value>
   </data>
+  <data name="LoginUnsuccessful" xml:space="preserve">
+    <value>Could not login</value>
+  </data>
   <data name="NotCreatedUser" xml:space="preserve">
     <value>User could not be created</value>
   </data>

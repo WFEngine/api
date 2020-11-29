@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace WFEngine.Api.Dto.Response.Auth
+﻿namespace WFEngine.Api.Dto.Response.Auth
 {
     /// <summary>
     /// 
     /// </summary>
-    public class LoginResponse
+    public class GetUserResponse
     {
         /// <summary>
         /// 
@@ -43,17 +41,5 @@ namespace WFEngine.Api.Dto.Response.Auth
         /// 
         /// </summary>
         public bool EmailVerificated { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string Token { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public DateTime? ExpireDate{ get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public string RedirectUrl { get; set; }
     }
 }
