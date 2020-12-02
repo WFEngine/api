@@ -5,6 +5,7 @@ using System;
 using System.Net;
 using WFEngine.Api.Filters;
 using WFEngine.Api.Models;
+using WFEngine.Core.Entities;
 using WFEngine.Core.Interfaces;
 using WFEngine.Core.Utilities;
 
@@ -48,6 +49,22 @@ namespace WFEngine.Api.Controllers
             mapper = _mapper;
             baseLocalizer = _baseLocalizer;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int CurrentUserId => JWTManager.GetUserId(HttpContext, uow);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public User CurrentUser => JWTManager.GetUser(CurrentUserId, uow);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string CurrentUserToken => JWTManager.GetToken(HttpContext);
+
 
         /// <summary>
         /// 

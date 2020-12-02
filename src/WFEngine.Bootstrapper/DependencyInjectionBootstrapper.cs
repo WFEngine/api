@@ -13,6 +13,8 @@ namespace WFEngine.Bootstrapper
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IOrganizationRepository, OrganizationRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ISolutionRepository, SolutionRepository>();
+            services.AddScoped<IProjectRepository, ProjectRepository>();
             return services;
         }
     }

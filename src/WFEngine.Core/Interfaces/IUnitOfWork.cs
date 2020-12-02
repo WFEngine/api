@@ -6,6 +6,8 @@ namespace WFEngine.Core.Interfaces
     {
         IOrganizationRepository Organization {get;}
         IUserRepository User { get; }
+        ISolutionRepository Solution { get; }
+        IProjectRepository Project { get; }
         bool Commit();
         bool Rollback();
     }

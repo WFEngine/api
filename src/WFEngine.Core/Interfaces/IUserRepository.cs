@@ -42,5 +42,11 @@ namespace WFEngine.Core.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         IDataResult<User> FindById(int id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        IResult LogoutUser(string token);
     }
 }

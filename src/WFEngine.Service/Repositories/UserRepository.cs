@@ -91,5 +91,20 @@ namespace WFEngine.Service.Repositories
                 return new SuccessDataResult<User>(user);
             return new ErrorDataResult<User>(user, Messages.User.NotFoundUser);
         }
+
+        public IResult LogoutUser(string token)
+        {
+            try
+            {
+                var db = cache.GetDatabase((int)enumRedisDatabase.Tokens);
+                db.KeyDelete($"{token}_organization");
+                db.KeyDelete($"{token}_user");
+                return new SuccessResult();
+            }
+            catch (Exception)
+            {
+                return new ErrorResult();
+            }
+        }
     }
 }

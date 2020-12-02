@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Localization;
 using Newtonsoft.Json;
 using RestSharp;
@@ -10,7 +8,6 @@ using System.Net;
 using WFEngine.Api.Dto.Request.Auth;
 using WFEngine.Api.Dto.Response.Auth;
 using WFEngine.Api.Filters;
-using WFEngine.Api.Models;
 using WFEngine.Core.Entities;
 using WFEngine.Core.Entities.Github;
 using WFEngine.Core.Enums;
@@ -243,6 +240,26 @@ namespace WFEngine.Api.Controllers
             baseResult.Avatar = user.Avatar;
             baseResult.TwoFactorEnabled = user.TwoFactorEnabled;
             baseResult.EmailVerificated = user.EmailVerificated;
+            return Ok(baseResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [HttpPost("logout")]
+        public IActionResult LogOut()
+        {
+            LogoutResponse baseResult = new LogoutResponse();
+            User user = CurrentUser;
+            if (user == null)
+                return NotFound(baseResult, userLocalizer[Messages.User.NotFoundUser]);
+            string currentToken = CurrentUserToken;
+            if (String.IsNullOrEmpty(currentToken))
+                return NotFound(baseResult, userLocalizer[Messages.User.NotFoundUser]);
+            IResult logouted = uow.User.LogoutUser(currentToken);
+            if (!logouted.Success)
+                return NotFound(baseResult);
+            baseResult.logouted = true;            
             return Ok(baseResult);
         }
     }

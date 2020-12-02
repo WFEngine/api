@@ -57,6 +57,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:WFEngine.Api.Controllers.AuthController.LogOut">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Controllers.BaseController">
             <summary>
             
@@ -84,6 +89,21 @@
             <param name="_uow"></param>
             <param name="_mapper"></param>
             <param name="_baseLocalizer"></param>
+        </member>
+        <member name="P:WFEngine.Api.Controllers.BaseController.CurrentUserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Controllers.BaseController.CurrentUser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Controllers.BaseController.CurrentUserToken">
+            <summary>
+            
+            </summary>
         </member>
         <member name="M:WFEngine.Api.Controllers.BaseController.Ok``1(``0,System.String)">
             <summary>
@@ -289,6 +309,11 @@
             </summary>
         </member>
         <member name="P:WFEngine.Api.Dto.Response.Auth.LoginResponse.RedirectUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Auth.LogoutResponse">
             <summary>
             
             </summary>

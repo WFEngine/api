@@ -15,6 +15,8 @@ namespace WFEngine.Service
 
         IOrganizationRepository _organization;
         IUserRepository _user;
+        ISolutionRepository _solution;
+        IProjectRepository _project;
 
         bool disposed;
 
@@ -47,6 +49,22 @@ namespace WFEngine.Service
             get
             {
                 return _user ?? (_user = new UserRepository(transaction));
+            }
+        }
+
+        public ISolutionRepository Solution
+        {
+            get
+            {
+                return _solution ?? (_solution = new SolutionRepository(transaction));
+            }
+        }
+
+        public IProjectRepository Project
+        {
+            get
+            {
+                return _project ?? (_project = new ProjectRepository(transaction));
             }
         }
 
