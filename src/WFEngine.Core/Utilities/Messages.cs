@@ -21,5 +21,12 @@
             public static string NotCreatedUser => "NotCreatedUser";
             public static string LoginUnsuccessful => "LoginUnsuccessful";
         }
+
+        public sealed class Solution
+        {
+            public static string NotFoundSolution => "NotFoundSolution";
+            public static string AlreadyExistsSolution => "AlreadyExistsSolution";
+            public static string NotCreatedSolution => "NotCreatedSolution";
+        }
     }
 }

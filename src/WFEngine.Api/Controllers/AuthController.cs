@@ -82,7 +82,8 @@ namespace WFEngine.Api.Controllers
                     baseResult.Avatar = user.Avatar;
                     baseResult.TwoFactorEnabled = user.TwoFactorEnabled;
                     baseResult.EmailVerificated = user.EmailVerificated;
-                    baseResult.Token = loginUser.Message;
+                    baseResult.LanguageId = (int)user.LanguageId;
+                    baseResult.Token = loginUser.Message;                    
                     baseResult.ExpireDate = DateTime.Now.AddDays(1);                    
                     break;
                 case Core.Enums.enumLoginType.Github:
@@ -240,6 +241,7 @@ namespace WFEngine.Api.Controllers
             baseResult.Avatar = user.Avatar;
             baseResult.TwoFactorEnabled = user.TwoFactorEnabled;
             baseResult.EmailVerificated = user.EmailVerificated;
+            baseResult.LanguageId = (int)user.LanguageId;
             return Ok(baseResult);
         }
 

@@ -50,6 +50,10 @@ namespace WFEngine.Api.Dto.Response.Auth
         /// <summary>
         /// 
         /// </summary>
+        public int LanguageId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public DateTime? ExpireDate{ get; set; }
         /// <summary>
         /// 

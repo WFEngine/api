@@ -41,5 +41,9 @@
         /// 
         /// </summary>
         public bool EmailVerificated { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int LanguageId { get; set; }
     }
 }
