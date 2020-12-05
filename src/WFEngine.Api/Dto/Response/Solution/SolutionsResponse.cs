@@ -64,7 +64,18 @@ namespace WFEngine.Api.Dto.Response.Solution
         /// </summary>
         public sealed class Project
         {
-            
+            /// <summary>
+            /// 
+            /// </summary>
+            public int Id { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string Name { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string Description { get; set; }
         }
     }
 }

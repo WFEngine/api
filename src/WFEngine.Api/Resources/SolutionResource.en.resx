@@ -126,4 +126,10 @@
   <data name="NotFoundSolution" xml:space="preserve">
     <value>No such solution found</value>
   </data>
+  <data name="NotFoundSolutionCollaborator" xml:space="preserve">
+    <value>You are not a participant of the project</value>
+  </data>
+  <data name="YouNotOwner" xml:space="preserve">
+    <value>You are not a project manager</value>
+  </data>
 </root>

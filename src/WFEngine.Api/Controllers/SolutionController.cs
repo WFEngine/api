@@ -55,7 +55,7 @@ namespace WFEngine.Api.Controllers
                 return NotFound(baseResult, userLocalizer[Messages.User.NotFoundUser]);
             Solution solution = mapper.Map<Solution>(dto);
             solution.OrganizationId = user.OrganizationId;
-            IDataResult<Solution> solutionExists = uow.Solution.FindByName(dto.Name, user.OrganizationId);
+            IDataResult<Solution> solutionExists = uow.Solution.FindSolutionByName(dto.Name, user.OrganizationId);
             if (solutionExists.Success)
                 return NotFound(baseResult, localizer[Messages.Solution.AlreadyExistsSolution]);
             IResult solutionCreated = uow.Solution.Insert(solution, user.Id);
@@ -84,13 +84,21 @@ namespace WFEngine.Api.Controllers
                 Name = x.Name,
                 Description = x.Description,
                 CollaboratorTypeId = x.CollaboratorTypeId,
-                OrganizationName = x.OrganizationName                
-                
+                OrganizationName = x.OrganizationName
+
             }).ToList();
 
             if (solutionsResponse.Solutions.Any())
             {
-                //TODO : Get Projects
+                foreach (var solution in solutionsResponse.Solutions)
+                {
+                    solution.Projects = uow.Project.GetProjectFromSolutionId(solution.Id).Data.Select(x => new SolutionsResponse.Project
+                    {
+                        Id = x.Id,
+                        Name = x.Name,
+                        Description = x.Description
+                    }).ToList();
+                }
             }
 
             return Ok(solutionsResponse);

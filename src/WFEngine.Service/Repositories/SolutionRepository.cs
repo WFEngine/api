@@ -16,7 +16,7 @@ namespace WFEngine.Service.Repositories
 
         }
 
-        public IDataResult<Solution> FindByName(string name, int organizationId)
+        public IDataResult<Solution> FindSolutionByName(string name, int organizationId)
         {
             var solution = connection.ExecuteCommand<Solution>("SELECT * FROM solution WHERE Name = @name AND OrganizationId = @organizationId AND Status = 1", name, organizationId)?.FirstOrDefault();
             if (solution != null)
@@ -37,7 +37,7 @@ namespace WFEngine.Service.Repositories
                 CreatorId = userId
             };
             solutionCollaborator.Id = connection.Insert(solutionCollaborator);
-            if(solutionCollaborator.Id <1)
+            if (solutionCollaborator.Id < 1)
                 return new ErrorResult(Messages.Solution.NotCreatedSolution);
             return new SuccessResult();
         }
@@ -53,5 +53,20 @@ namespace WFEngine.Service.Repositories
             return new SuccessDataResult<List<Solution>>(solutions);
         }
 
+        public IDataResult<SolutionCollaborator> CheckSolutionCollaborator(int userId, int solutionId)
+        {
+            var result = connection.ExecuteCommand<SolutionCollaborator>("SELECT * FROM solutioncollaborator WHERE SolutionId = @solutionId AND UserId = @userId AND Status = 1", userId, solutionId)?.FirstOrDefault();
+            if (result != null)
+                return new SuccessDataResult<SolutionCollaborator>(result);
+            return new ErrorDataResult<SolutionCollaborator>(null,Messages.SolutionCollaborator.NotFoundSolutionCollaborator);
+        }
+
+        public IDataResult<Solution> FindSolutionById(int id)
+        {
+            var solution = connection.ExecuteCommand<Solution>("SELECT * FROM solution WHERE Id = @id AND Status = 1",id)?.FirstOrDefault();
+            if (solution != null)
+                return new SuccessDataResult<Solution>(solution);
+            return new ErrorDataResult<Solution>(null, Messages.Solution.NotFoundSolution);
+        }
     }
 }

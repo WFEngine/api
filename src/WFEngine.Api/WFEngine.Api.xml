@@ -128,13 +128,23 @@
             
             </summary>
         </member>
-        <member name="M:WFEngine.Api.Controllers.ProjectController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource})">
+        <member name="M:WFEngine.Api.Controllers.ProjectController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.ProjectResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.SolutionResource})">
             <summary>
             
             </summary>
             <param name="_uow"></param>
             <param name="_mapper"></param>
             <param name="_baseLocalizer"></param>
+            <param name="_localizer"></param>
+            <param name="_solutionLocalizer"></param>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.ProjectController.Insert(System.Int32,WFEngine.Api.Dto.Request.Project.InsertProjectRequestDTO)">
+            <summary>
+            
+            </summary>
+            <param name="solutionId"></param>
+            <param name="dto"></param>
+            <returns></returns>
         </member>
         <member name="T:WFEngine.Api.Controllers.SolutionController">
             <summary>
@@ -235,6 +245,31 @@
             </summary>
         </member>
         <member name="M:WFEngine.Api.Dto.Request.Auth.RegisterRequestDTOValidator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Project.InsertProjectRequestDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Project.InsertProjectRequestDTO.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Project.InsertProjectRequestDTO.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Project.InsertProjectRequestValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.Project.InsertProjectRequestValidator.#ctor">
             <summary>
             
             </summary>
@@ -409,6 +444,16 @@
             
             </summary>
         </member>
+        <member name="T:WFEngine.Api.Dto.Response.Project.InsertProjectResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.InsertProjectResponse.Id">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Dto.Response.Solution.InsertSolutionResponse">
             <summary>
             
@@ -479,6 +524,21 @@
             
             </summary>
         </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.SolutionsResponse.Project.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.SolutionsResponse.Project.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.SolutionsResponse.Project.Description">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Filters.WFAllowAnonymousAttribute">
             <summary>
             
@@ -513,7 +573,18 @@
             </summary>
             <param name="context"></param>
         </member>
-        <member name="M:WFEngine.Api.Filters.WFAuthorizeAttribute.UnAuthorized(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+        <member name="T:WFEngine.Api.Filters.WFSolutionOwnerAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFSolutionOwnerAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFSolutionOwnerAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
             <summary>
             
             </summary>
@@ -550,6 +621,11 @@
             
             </summary>
         </member>
+        <member name="T:WFEngine.Api.ProjectResource">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.SolutionResource">
             <summary>
             
@@ -577,6 +653,18 @@
             </summary>
             <param name="app"></param>
             <param name="env"></param>
+        </member>
+        <member name="T:WFEngine.Api.Utilities.IActionFilterResult">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Utilities.IActionFilterResult.UnAuthorized``1(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.Extensions.Localization.IStringLocalizer,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="localizer"></param>
         </member>
     </members>
 </doc>

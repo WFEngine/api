@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using WFEngine.Api.Dto.Request.Auth;
+using WFEngine.Api.Dto.Request.Project;
 using WFEngine.Api.Dto.Request.Solution;
 using WFEngine.Bootstrapper;
 
@@ -35,7 +36,8 @@ namespace WFEngine.Api
             {
                 typeof(RegisterRequestDTO),
                 typeof(LoginRequestDTO),
-                typeof(InsertSolutionRequestDTO)
+                typeof(InsertSolutionRequestDTO),
+                typeof(InsertProjectRequestDTO)
             });
             services.AddDependencyInjection();
             services.AddLocalizationMessage();

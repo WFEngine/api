@@ -28,5 +28,16 @@
             public static string AlreadyExistsSolution => "AlreadyExistsSolution";
             public static string NotCreatedSolution => "NotCreatedSolution";
         }
+
+        public sealed class SolutionCollaborator
+        {
+            public static string NotFoundSolutionCollaborator => "NotFoundSolutionCollaborator";
+            public static string YouNotOwner => "YouNotOwner";
+        }
+
+        public sealed class Project
+        {
+            public static string NotCreatedProject => "NotCreatedProject";
+        }
     }
 }

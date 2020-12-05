@@ -1,12 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Localization;
 using System;
 using System.Linq;
-using System.Net;
 using WFEngine.Api.Dto.Response.Auth;
-using WFEngine.Api.Models;
+using WFEngine.Api.Utilities;
 using WFEngine.Core.Entities;
 using WFEngine.Core.Interfaces;
 using WFEngine.Core.Utilities;
@@ -43,24 +40,18 @@ namespace WFEngine.Api.Filters
                     localizer = (IStringLocalizer<BaseResource>)context.HttpContext.RequestServices.GetService(typeof(IStringLocalizer<BaseResource>));
                     var token = JWTManager.GetToken(context.HttpContext);
                     if (String.IsNullOrWhiteSpace(token))
-                        UnAuthorized(context);
+                    {
+                        IActionFilterResult.UnAuthorized<LoginResponse>(context, localizer);
+                        return;
+                    }
                     IDataResult<User> existUser = unitOfWork.User.CheckTokenWithUser(token);
                     if (!existUser.Success)
-                        UnAuthorized(context);
+                    {
+                        IActionFilterResult.UnAuthorized<LoginResponse>(context, localizer);
+                        return;
+                    }
                 }
             }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="context"></param>
-        private async void UnAuthorized(ActionExecutingContext context)
-        {
-            BaseResult<LoginResponse> baseResult = new BaseResult<LoginResponse>();
-            baseResult.Message = localizer[Messages.UnAuthorized];
-            baseResult.StatusCode = HttpStatusCode.Unauthorized;
-            context.Result = new UnauthorizedObjectResult(baseResult);
         }
     }
 }

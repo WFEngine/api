@@ -117,19 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AlreadyExistsSolution" xml:space="preserve">
-    <value>Böyle bir çözüm zaten mevcut</value>
-  </data>
-  <data name="NotCreatedSolution" xml:space="preserve">
-    <value>Çözüm oluşturulamadı</value>
-  </data>
-  <data name="NotFoundSolution" xml:space="preserve">
-    <value>Böyle bir çözüm bulunamadı</value>
-  </data>
-  <data name="NotFoundSolutionCollaborator" xml:space="preserve">
-    <value>Projeye ait bir katılımcı değilsiniz</value>
-  </data>
-  <data name="YouNotOwner" xml:space="preserve">
-    <value>Proje yöneticisi değilsiniz</value>
+  <data name="NotCreatedProject" xml:space="preserve">
+    <value>The project could not be created</value>
   </data>
 </root>

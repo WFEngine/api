@@ -12,7 +12,7 @@ namespace WFEngine.Core.Interfaces
         /// <param name="name"></param>
         /// <param name="organizationId"></param>
         /// <returns></returns>
-        IDataResult<Solution> FindByName(string name, int organizationId);
+        IDataResult<Solution> FindSolutionByName(string name, int organizationId);
         /// <summary>
         /// 
         /// </summary>
@@ -26,5 +26,18 @@ namespace WFEngine.Core.Interfaces
         /// <param name="userId"></param>
         /// <returns></returns>
         IDataResult<List<Solution>> GetSolutions(int userId);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="solutionId"></param>
+        /// <returns></returns>
+        IDataResult<SolutionCollaborator> CheckSolutionCollaborator(int userId, int solutionId);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        IDataResult<Solution> FindSolutionById(int id);
     }
 }
