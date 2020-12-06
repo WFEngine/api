@@ -16,7 +16,7 @@ namespace WFEngine.Service.Repositories
 
         }
 
-        public DataResult<List<Project>> GetProjectFromSolutionId(int solutionId)
+        public IDataResult<List<Project>> GetProjectFromSolutionId(int solutionId)
         {
             var result = connection.ExecuteCommand<Project>(@"
             SELECT * FROM project WHERE SolutionId = @solutionId AND Status = 1
@@ -30,6 +30,12 @@ namespace WFEngine.Service.Repositories
             if (project.Id > 0)
                 return new SuccessResult();
             return new ErrorResult(Messages.Project.NotCreatedProject);            
+        }
+
+        public IDataResult<List<ProjectType>> GetProjectTypes()
+        {
+            var projectTypes = connection.ExecuteCommand<ProjectType>("SELECT * FROM projecttype WHERE Status =1")?.ToList();
+            return new SuccessDataResult<List<ProjectType>>(projectTypes);
         }
     }
 }

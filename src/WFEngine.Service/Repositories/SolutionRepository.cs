@@ -63,10 +63,43 @@ namespace WFEngine.Service.Repositories
 
         public IDataResult<Solution> FindSolutionById(int id)
         {
-            var solution = connection.ExecuteCommand<Solution>("SELECT * FROM solution WHERE Id = @id AND Status = 1",id)?.FirstOrDefault();
+            var solution = connection.ExecuteCommand<Solution>(@"SELECT 
+            s.*,
+            (SELECT o.Name FROM organization o WHERE o.Id = s.OrganizationId) AS OrganizationName          
+            FROM solution s WHERE s.Id = @id AND s.Status = 1", id)?.FirstOrDefault();
             if (solution != null)
                 return new SuccessDataResult<Solution>(solution);
             return new ErrorDataResult<Solution>(null, Messages.Solution.NotFoundSolution);
+        }
+
+        public IResult DeleteSolution(Solution solution)
+        {
+            var isDeleted = connection.Delete(solution);
+            if (isDeleted)
+                return new SuccessResult();
+            return new ErrorResult(Messages.Solution.NotDeletedSolution);
+        }
+
+        public IDataResult<List<SolutionCollaborator>> GetSolutionCollaborators(int solutionId)
+        {
+            var result = connection.ExecuteCommand<SolutionCollaborator>(@"SELECT  
+            (SELECT ct.GlobalName FROM collaboratortype ct WHERE ct.Id = sc.CollaboratorTypeId) AS CollaboratorTypeName,
+            (SELECT o.Name FROM organization o WHERE o.Id = u.OrganizationId) AS OrganizationName,
+            u.name AS  UserName,
+            u.email AS Email,
+            u.avatar AS Avatar
+            FROM solutioncollaborator sc
+            INNER JOIN user u ON u.Id = sc.UserId
+            WHERE sc.SolutionId = @solutionId AND sc.Status = 1;",solutionId).ToList();
+            return new SuccessDataResult<List<SolutionCollaborator>>(result);
+        }
+
+        public IResult Update(Solution solution)
+        {
+            var isUpdated = connection.Update(solution);
+            if (isUpdated)
+                return new SuccessResult();
+            return new ErrorResult(Messages.Solution.NotUpdatedSolution);
         }
     }
 }

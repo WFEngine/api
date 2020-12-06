@@ -1,17 +1,13 @@
 ﻿using FluentValidation;
 using System;
 
-namespace WFEngine.Api.Dto.Request.Project
+namespace WFEngine.Api.Dto.Request.Solution
 {
     /// <summary>
     /// 
     /// </summary>
-    public class InsertProjectRequestDTO
+    public class UpdateSolutionRequestDTO
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public int ProjectTypeId { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -25,14 +21,13 @@ namespace WFEngine.Api.Dto.Request.Project
     /// <summary>
     /// 
     /// </summary>
-    public class InsertProjectRequestValidator : AbstractValidator<InsertProjectRequestDTO>
+    public class UpdateSolutionRequestValidator : AbstractValidator<UpdateSolutionRequestDTO>
     {
         /// <summary>
         /// 
         /// </summary>
-        public InsertProjectRequestValidator()
+        public UpdateSolutionRequestValidator()
         {
-            RuleFor(x => x.ProjectTypeId).GreaterThan(0);
             RuleFor(x => x.Name).NotEmpty().MaximumLength(50);
             When(x => !String.IsNullOrEmpty(x.Description), () =>
             {

@@ -123,11 +123,17 @@
   <data name="NotCreatedSolution" xml:space="preserve">
     <value>Çözüm oluşturulamadı</value>
   </data>
+  <data name="NotDeletedSolution" xml:space="preserve">
+    <value>Çözüm silinemedi</value>
+  </data>
   <data name="NotFoundSolution" xml:space="preserve">
     <value>Böyle bir çözüm bulunamadı</value>
   </data>
   <data name="NotFoundSolutionCollaborator" xml:space="preserve">
     <value>Projeye ait bir katılımcı değilsiniz</value>
+  </data>
+  <data name="NotUpdatedSolution" xml:space="preserve">
+    <value>Çözüm güncellenemedi</value>
   </data>
   <data name="YouNotOwner" xml:space="preserve">
     <value>Proje yöneticisi değilsiniz</value>

@@ -123,11 +123,17 @@
   <data name="NotCreatedSolution" xml:space="preserve">
     <value>Could not create solution</value>
   </data>
+  <data name="NotDeletedSolution" xml:space="preserve">
+    <value>The solution could not be deleted</value>
+  </data>
   <data name="NotFoundSolution" xml:space="preserve">
     <value>No such solution found</value>
   </data>
   <data name="NotFoundSolutionCollaborator" xml:space="preserve">
     <value>You are not a participant of the project</value>
+  </data>
+  <data name="NotUpdatedSolution" xml:space="preserve">
+    <value>The solution could not be updated</value>
   </data>
   <data name="YouNotOwner" xml:space="preserve">
     <value>You are not a project manager</value>

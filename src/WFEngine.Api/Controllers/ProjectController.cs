@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
+using System.Linq;
 using WFEngine.Api.Dto.Request.Project;
 using WFEngine.Api.Dto.Response.Project;
 using WFEngine.Api.Filters;
@@ -42,6 +43,23 @@ namespace WFEngine.Api.Controllers
         /// <summary>
         /// 
         /// </summary>
+        /// <returns></returns>
+        [HttpGet("projecttypes")]
+        public IActionResult GetProjectTypes()
+        {
+            GetProjectTypesResponse baseResult = new GetProjectTypesResponse();
+            baseResult.ProjectTypes = uow.Project.GetProjectTypes().Data.Select(x => new GetProjectTypesResponse.ProjectType
+            {
+                Id = x.Id,
+                Name = x.Name,
+                GlobalName = x.GlobalName
+            }).ToList();
+            return Ok(baseResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="solutionId"></param>
         /// <param name="dto"></param>
         /// <returns></returns>
@@ -58,7 +76,7 @@ namespace WFEngine.Api.Controllers
             Project project = mapper.Map<Project>(dto);
             project.SolutionId = solution.Id;
             project.OrganizationId = solution.OrganizationId;
-            project.CreatorId = CurrentUser.Id;
+            project.CreatorId = user.Id;
             IResult projectCreated = uow.Project.Insert(project);
             if (!projectCreated.Success)
                 return NotFound(projectResponse, localizer[projectCreated.Message]);

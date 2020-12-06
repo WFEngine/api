@@ -27,6 +27,8 @@
             public static string NotFoundSolution => "NotFoundSolution";
             public static string AlreadyExistsSolution => "AlreadyExistsSolution";
             public static string NotCreatedSolution => "NotCreatedSolution";
+            public static string NotDeletedSolution => "NotDeletedSolution";
+            public static string NotUpdatedSolution => "NotUpdatedSolution";
         }
 
         public sealed class SolutionCollaborator

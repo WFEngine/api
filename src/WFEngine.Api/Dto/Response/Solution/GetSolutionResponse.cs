@@ -5,20 +5,21 @@ namespace WFEngine.Api.Dto.Response.Solution
     /// <summary>
     /// 
     /// </summary>
-    public class SolutionsResponse
+    public class GetSolutionResponse
     {
         /// <summary>
         /// 
         /// </summary>
-        public List<Solution> Solutions { get; set; }
+
+        public GetSolutionResponse()
+        {
+            solution = new Solution();
+        }
 
         /// <summary>
         /// 
         /// </summary>
-        public SolutionsResponse()
-        {
-            Solutions = new List<Solution>();
-        }
+        public Solution solution { get; set; }
 
         /// <summary>
         /// 
@@ -52,7 +53,7 @@ namespace WFEngine.Api.Dto.Response.Solution
             /// <summary>
             /// 
             /// </summary>
-            public List<Colllaborator> Colllaborators { get; set; }
+            public List<Colllaborator> Colllaborators { get; set; }    
 
             /// <summary>
             /// 
@@ -61,7 +62,7 @@ namespace WFEngine.Api.Dto.Response.Solution
             {
                 Projects = new List<Project>();
                 Colllaborators = new List<Colllaborator>();
-            }
+            }           
         }
 
         /// <summary>
@@ -86,6 +87,7 @@ namespace WFEngine.Api.Dto.Response.Solution
             /// </summary>
             public string ProjectType { get; set; }
         }
+
 
         /// <summary>
         /// 

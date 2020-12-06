@@ -39,5 +39,23 @@ namespace WFEngine.Core.Interfaces
         /// <param name="id"></param>
         /// <returns></returns>
         IDataResult<Solution> FindSolutionById(int id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="solution"></param>
+        /// <returns></returns>
+        IResult DeleteSolution(Solution solution);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="solutionId"></param>
+        /// <returns></returns>
+        IDataResult<List<SolutionCollaborator>> GetSolutionCollaborators(int solutionId);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="solution"></param>
+        /// <returns></returns>
+        IResult Update(Solution solution);
     }
 }

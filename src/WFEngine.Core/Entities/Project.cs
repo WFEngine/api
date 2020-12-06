@@ -7,6 +7,7 @@ namespace WFEngine.Core.Entities
     public class Project : BaseEntity
     {
         public string UniqueKey { get; set; }
+        public int ProjectTypeId { get; set; }
         public int OrganizationId { get; set; }
         public int SolutionId { get; set; }
         public string Name { get; set; }
