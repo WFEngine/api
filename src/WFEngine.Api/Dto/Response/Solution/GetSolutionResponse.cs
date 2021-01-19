@@ -53,7 +53,7 @@ namespace WFEngine.Api.Dto.Response.Solution
             /// <summary>
             /// 
             /// </summary>
-            public List<Colllaborator> Colllaborators { get; set; }    
+            public List<Colllaborator> Collaborators { get; set; }    
 
             /// <summary>
             /// 
@@ -61,7 +61,7 @@ namespace WFEngine.Api.Dto.Response.Solution
             public Solution()
             {
                 Projects = new List<Project>();
-                Colllaborators = new List<Colllaborator>();
+                Collaborators = new List<Colllaborator>();
             }           
         }
 

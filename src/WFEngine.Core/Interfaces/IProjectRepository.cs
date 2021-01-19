@@ -23,5 +23,17 @@ namespace WFEngine.Core.Interfaces
         /// </summary>
         /// <returns></returns>
         IDataResult<List<ProjectType>> GetProjectTypes();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        IDataResult<Project> GetProject(int Id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="project"></param>
+        /// <returns></returns>
+        IResult Update(Project project);
     }
 }

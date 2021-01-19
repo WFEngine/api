@@ -40,6 +40,8 @@
         public sealed class Project
         {
             public static string NotCreatedProject => "NotCreatedProject";
+            public static string NotFoundProject => "NotFoundProject";
+            public static string NotUpdatedProject => "NotUpdatedProject";
         }
     }
 }

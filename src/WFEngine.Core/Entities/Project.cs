@@ -13,6 +13,12 @@ namespace WFEngine.Core.Entities
         public string Name { get; set; }
         public string Description { get; set; }
 
+        [Write(false)]
+        public string OrganizationName { get; set; }
+
+        [Write(false)]
+        public string SolutionName { get; set; }
+
         public Project()
         {
             UniqueKey = Guid.NewGuid().ToString();

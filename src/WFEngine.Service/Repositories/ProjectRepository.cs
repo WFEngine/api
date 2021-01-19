@@ -37,5 +37,27 @@ namespace WFEngine.Service.Repositories
             var projectTypes = connection.ExecuteCommand<ProjectType>("SELECT * FROM projecttype WHERE Status =1")?.ToList();
             return new SuccessDataResult<List<ProjectType>>(projectTypes);
         }
+
+        public IDataResult<Project> GetProject(int Id)
+        {
+            var project = connection.ExecuteCommand<Project>(
+                @"SELECT 
+                    p.*,
+                    (SELECT s.Name FROM solution s WHERE s.Id= p.SolutionId) as SolutionName,
+                    (SELECT o.Name FROM organization o WHERE o.Id = p.OrganizationId) as OrganizationName
+                FROM project p WHERE p.Id = @Id AND p.Status = 1", Id
+                )?.FirstOrDefault();
+            if (project == null)
+                return new ErrorDataResult<Project>(null, Messages.Project.NotFoundProject);
+            return new SuccessDataResult<Project>(project,"");
+        }
+
+        public IResult Update(Project project)
+        {
+            bool isUpdated = connection.Update(project);
+            if (!isUpdated)
+                return new ErrorResult(Messages.Project.NotUpdatedProject);
+            return new SuccessResult();
+        }
     }
 }

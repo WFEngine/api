@@ -20,6 +20,7 @@ namespace WFEngine.Api.AutoMapper
             CreateMap<RegisterRequestDTO, User>();
             CreateMap<InsertSolutionRequestDTO, Solution>();
             CreateMap<InsertProjectRequestDTO, Project>();
+            CreateMap<UpdateProjectRequestDTO, Project>();
         }
     }
 }

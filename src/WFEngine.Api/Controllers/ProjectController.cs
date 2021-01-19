@@ -85,5 +85,74 @@ namespace WFEngine.Api.Controllers
             projectResponse.Id = project.Id;
             return Ok(projectResponse);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <returns></returns>
+        [HttpGet("get/{projectId}")]
+        [WFProjectCollaborator]
+        public IActionResult GetProject(int projectId)
+        {
+            GetProjectResponse response = new GetProjectResponse();
+            IDataResult<Project> projectExists = uow.Project.GetProject(projectId);
+            if (!projectExists.Success)
+                return NotFound(response, localizer[projectExists.Message]);
+            Project project = projectExists.Data;
+            response.Project = new GetProjectResponse.ProjectItem()
+            {
+                Id = project.Id,
+                UniqueKey = project.UniqueKey,
+                Name = project.Name,
+                Description = project.Description,
+                OrganizationId = project.OrganizationId,
+                OrganizationName = project.OrganizationName,
+                ProjectTypeId = project.ProjectTypeId,
+                SolutionId = project.SolutionId,
+                SolutionName = project.SolutionName
+            };
+            return Ok(response);
+        }        
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        [HttpPut("update/{id}")]
+        [WFSolutionCollaboratorWrite]
+        public IActionResult Update(int id,[FromBody]UpdateProjectRequestDTO dto)
+        {
+            UpdateProjectResponse response = new UpdateProjectResponse();
+            IDataResult<Project> projectExists = uow.Project.GetProject(id);
+            if (!projectExists.Success)
+                return NotFound(response, localizer[projectExists.Message]);
+            Project project = projectExists.Data;
+            project.ProjectTypeId = dto.ProjectTypeId;
+            project.Name = dto.Name;
+            project.Description = dto.Description;
+            IResult isUpdated = uow.Project.Update(project);
+            if (!isUpdated.Success)
+                return NotFound(response, localizer[isUpdated.Message]);
+            if (!uow.Commit())
+                return NotFound(response);
+            response.IsUpdated = true;
+            return Ok(response);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("delete/{id}")]
+        [WFSolutionOwner]
+        public IActionResult Delete(int id)
+        {
+            //TODO: Proje Silme İşlemleri Kodlanacak
+            return Ok(new { });
+        }
     }
 }

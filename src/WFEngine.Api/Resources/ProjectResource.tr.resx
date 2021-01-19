@@ -120,4 +120,10 @@
   <data name="NotCreatedProject" xml:space="preserve">
     <value>Proje oluşturulamadı</value>
   </data>
+  <data name="NotFoundProject" xml:space="preserve">
+    <value>Proje bulunamadı</value>
+  </data>
+  <data name="NotUpdatedProject" xml:space="preserve">
+    <value>Proje Güncellenemedi</value>
+  </data>
 </root>

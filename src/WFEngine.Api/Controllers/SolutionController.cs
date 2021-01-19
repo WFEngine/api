@@ -164,7 +164,7 @@ namespace WFEngine.Api.Controllers
                 Description = x.Description,
                 ProjectType = projectTypes.FirstOrDefault(y=>y.Id == x.ProjectTypeId)?.GlobalName
             }).ToList();
-            response.solution.Colllaborators = uow.Solution.GetSolutionCollaborators(id).Data.Select(x => new GetSolutionResponse.Colllaborator
+            response.solution.Collaborators = uow.Solution.GetSolutionCollaborators(id).Data.Select(x => new GetSolutionResponse.Colllaborator
             {
                 CollaboratorTypeName = x.CollaboratorTypeName,
                 OrganizationName = x.OrganizationName,

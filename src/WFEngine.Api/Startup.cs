@@ -38,7 +38,8 @@ namespace WFEngine.Api
                 typeof(LoginRequestDTO),
                 typeof(InsertSolutionRequestDTO),
                 typeof(InsertProjectRequestDTO),
-                typeof(UpdateSolutionRequestDTO)
+                typeof(UpdateSolutionRequestDTO),
+                typeof(UpdateProjectRequestDTO)
             });
             services.AddDependencyInjection();
             services.AddLocalizationMessage();

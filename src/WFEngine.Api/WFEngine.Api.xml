@@ -152,6 +152,28 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
+        <member name="M:WFEngine.Api.Controllers.ProjectController.GetProject(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="projectId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.ProjectController.Update(System.Int32,WFEngine.Api.Dto.Request.Project.UpdateProjectRequestDTO)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.ProjectController.Delete(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:WFEngine.Api.Controllers.SolutionController">
             <summary>
             
@@ -303,6 +325,41 @@
             </summary>
         </member>
         <member name="M:WFEngine.Api.Dto.Request.Project.InsertProjectRequestValidator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Project.UpdateProjectRequestDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Project.UpdateProjectRequestDTO.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Project.UpdateProjectRequestDTO.ProjectTypeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Project.UpdateProjectRequestDTO.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Project.UpdateProjectRequestDTO.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Project.UpdateProjectRequestValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.Project.UpdateProjectRequestValidator.#ctor">
             <summary>
             
             </summary>
@@ -502,6 +559,86 @@
             
             </summary>
         </member>
+        <member name="T:WFEngine.Api.Dto.Response.Project.GetProjectResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.Project">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.Solutions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem.UniqueKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem.ProjectTypeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem.OrganizationId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem.OrganizationName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem.SolutionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem.SolutionName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.ProjectItem.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Project.GetProjectResponse.Solution">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.Solution.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.Solution.Name">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Dto.Response.Project.GetProjectTypesResponse">
             <summary>
             
@@ -543,6 +680,21 @@
             </summary>
         </member>
         <member name="P:WFEngine.Api.Dto.Response.Project.InsertProjectResponse.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Project.UpdateProjectResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.UpdateProjectResponse.IsUpdated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Response.Project.UpdateProjectResponse.#ctor">
             <summary>
             
             </summary>
@@ -602,7 +754,7 @@
             
             </summary>
         </member>
-        <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.Solution.Colllaborators">
+        <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.Solution.Collaborators">
             <summary>
             
             </summary>
@@ -836,6 +988,70 @@
             <param name="context"></param>
         </member>
         <member name="M:WFEngine.Api.Filters.WFAuthorizeAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:WFEngine.Api.Filters.WFProjectCollaboratorAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Filters.WFProjectCollaboratorAttribute.baseLocalizer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Filters.WFProjectCollaboratorAttribute.solutionLocalizer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Filters.WFProjectCollaboratorAttribute.projectLocalizer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFProjectCollaboratorAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFProjectCollaboratorAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:WFEngine.Api.Filters.WFSolutionCollaboratorWriteAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Filters.WFSolutionCollaboratorWriteAttribute.baseLocalizer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Filters.WFSolutionCollaboratorWriteAttribute.solutionLocalizer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Filters.WFSolutionCollaboratorWriteAttribute.projectLocalizer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFSolutionCollaboratorWriteAttribute.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:WFEngine.Api.Filters.WFSolutionCollaboratorWriteAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
             <summary>
             
             </summary>
