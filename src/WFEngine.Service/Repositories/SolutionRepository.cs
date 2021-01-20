@@ -18,7 +18,12 @@ namespace WFEngine.Service.Repositories
 
         public IDataResult<Solution> FindSolutionByName(string name, int organizationId)
         {
-            var solution = connection.ExecuteCommand<Solution>("SELECT * FROM solution WHERE Name = @name AND OrganizationId = @organizationId AND Status = 1", name, organizationId)?.FirstOrDefault();
+            var solution = connection.ExecuteCommand<Solution>(@"
+            SELECT 
+                s.*,
+            (SELECT p.Version FROM packageversion p WHERE p.Id = s.PackageVersionId) AS PackageVersion
+            FROM solution s 
+            WHERE s.Name = @name AND s.OrganizationId = @organizationId AND s.Status = 1", name, organizationId)?.FirstOrDefault();
             if (solution != null)
                 return new SuccessDataResult<Solution>(solution);
             return new ErrorDataResult<Solution>(null, Messages.Solution.NotFoundSolution);
@@ -45,6 +50,7 @@ namespace WFEngine.Service.Repositories
         {
             var solutions = connection.ExecuteCommand<Solution>(@"SELECT 
             s.*,
+            (SELECT p.Version FROM packageversion p WHERE p.Id = s.PackageVersionId) AS PackageVersion,
             (SELECT o.Name FROM organization o WHERE o.Id = s.OrganizationId) AS OrganizationName,
             sc.CollaboratorTypeId
             FROM solutioncollaborator sc
@@ -65,7 +71,8 @@ namespace WFEngine.Service.Repositories
         {
             var solution = connection.ExecuteCommand<Solution>(@"SELECT 
             s.*,
-            (SELECT o.Name FROM organization o WHERE o.Id = s.OrganizationId) AS OrganizationName          
+            (SELECT o.Name FROM organization o WHERE o.Id = s.OrganizationId) AS OrganizationName,
+            (SELECT p.Version FROM packageversion p WHERE p.Id = s.PackageVersionId) AS PackageVersion
             FROM solution s WHERE s.Id = @id AND s.Status = 1", id)?.FirstOrDefault();
             if (solution != null)
                 return new SuccessDataResult<Solution>(solution);

@@ -156,6 +156,8 @@ namespace WFEngine.Api.Controllers
             response.solution.Description = solution.Description;
             response.solution.OrganizationName = solution.OrganizationName;
             response.solution.CollaboratorTypeId = solution.CollaboratorTypeId;
+            response.solution.PackageVersionId = solution.PackageVersionId;
+            response.solution.PackageVersion = solution.PackageVersion;
             var projectTypes = uow.Project.GetProjectTypes().Data;
             response.solution.Projects = uow.Project.GetProjectFromSolutionId(id).Data.Select(x => new GetSolutionResponse.Project
             {

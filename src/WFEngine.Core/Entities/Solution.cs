@@ -8,6 +8,7 @@ namespace WFEngine.Core.Entities
     {
         public string UniqueKey { get; set; }
         public int OrganizationId { get; set; }
+        public int PackageVersionId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
@@ -16,6 +17,8 @@ namespace WFEngine.Core.Entities
 
         [Write(false)]
         public int CollaboratorTypeId { get; set; }
+        [Write(false)]
+        public string PackageVersion { get; set; }
 
         public Solution()
         {

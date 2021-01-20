@@ -17,6 +17,7 @@ namespace WFEngine.Service
         IUserRepository _user;
         ISolutionRepository _solution;
         IProjectRepository _project;
+        IPackageVersionRepository _packageVersion;
 
         bool disposed;
 
@@ -65,6 +66,14 @@ namespace WFEngine.Service
             get
             {
                 return _project ?? (_project = new ProjectRepository(transaction));
+            }
+        }
+
+        public IPackageVersionRepository PackageVersion
+        {
+            get
+            {
+                return _packageVersion ?? (_packageVersion = new PackageVersionRepository(transaction));
             }
         }
 

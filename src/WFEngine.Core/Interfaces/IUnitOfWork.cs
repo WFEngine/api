@@ -8,6 +8,7 @@ namespace WFEngine.Core.Interfaces
         IUserRepository User { get; }
         ISolutionRepository Solution { get; }
         IProjectRepository Project { get; }
+        IPackageVersionRepository PackageVersion { get; }
         bool Commit();
         bool Rollback();
     }

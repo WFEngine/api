@@ -49,6 +49,14 @@ namespace WFEngine.Api.Dto.Response.Solution
             /// <summary>
             /// 
             /// </summary>
+            public int PackageVersionId { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string PackageVersion { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
             public List<Project> Projects { get; set; }
             /// <summary>
             /// 
