@@ -639,6 +639,11 @@
             
             </summary>
         </member>
+        <member name="M:WFEngine.Api.Dto.Response.Project.GetProjectResponse.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Dto.Response.Project.GetProjectTypesResponse">
             <summary>
             
@@ -695,6 +700,21 @@
             </summary>
         </member>
         <member name="M:WFEngine.Api.Dto.Response.Project.UpdateProjectResponse.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Solution.DeleteProjectResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.DeleteProjectResponse.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Response.Solution.DeleteProjectResponse.#ctor">
             <summary>
             
             </summary>
@@ -790,6 +810,11 @@
             </summary>
         </member>
         <member name="T:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.Colllaborator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.Colllaborator.Id">
             <summary>
             
             </summary>

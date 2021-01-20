@@ -120,6 +120,9 @@
   <data name="NotCreatedProject" xml:space="preserve">
     <value>The project could not be created</value>
   </data>
+  <data name="NotDeletedProject" xml:space="preserve">
+    <value>The project could not be deleted</value>
+  </data>
   <data name="NotFoundProject" xml:space="preserve">
     <value>The project not found</value>
   </data>

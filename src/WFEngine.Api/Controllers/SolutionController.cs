@@ -166,6 +166,7 @@ namespace WFEngine.Api.Controllers
             }).ToList();
             response.solution.Collaborators = uow.Solution.GetSolutionCollaborators(id).Data.Select(x => new GetSolutionResponse.Colllaborator
             {
+                Id = x.Id,
                 CollaboratorTypeName = x.CollaboratorTypeName,
                 OrganizationName = x.OrganizationName,
                 UserName = x.UserName,

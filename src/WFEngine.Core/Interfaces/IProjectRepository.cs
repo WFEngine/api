@@ -35,5 +35,11 @@ namespace WFEngine.Core.Interfaces
         /// <param name="project"></param>
         /// <returns></returns>
         IResult Update(Project project);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="project"></param>
+        /// <returns></returns>
+        IResult Delete(Project project);        
     }
 }

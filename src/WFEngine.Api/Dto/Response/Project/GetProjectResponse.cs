@@ -73,5 +73,13 @@ namespace WFEngine.Api.Dto.Response.Project
             /// </summary>
             public string Name { get; set; }
         }
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        public GetProjectResponse()
+        {
+            Solutions = new List<Solution>();
+        }
     }
 }

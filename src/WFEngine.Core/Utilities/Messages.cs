@@ -42,6 +42,7 @@
             public static string NotCreatedProject => "NotCreatedProject";
             public static string NotFoundProject => "NotFoundProject";
             public static string NotUpdatedProject => "NotUpdatedProject";
+            public static string NotDeletedProject => "NotDeletedProject";
         }
     }
 }

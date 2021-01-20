@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
+using System.Collections.Generic;
 using System.Linq;
 using WFEngine.Api.Dto.Request.Project;
 using WFEngine.Api.Dto.Response.Project;
+using WFEngine.Api.Dto.Response.Solution;
 using WFEngine.Api.Filters;
 using WFEngine.Core.Entities;
 using WFEngine.Core.Interfaces;
@@ -151,8 +153,17 @@ namespace WFEngine.Api.Controllers
         [WFSolutionOwner]
         public IActionResult Delete(int id)
         {
-            //TODO: Proje Silme İşlemleri Kodlanacak
-            return Ok(new { });
+            DeleteProjectResponse response = new DeleteProjectResponse();
+            IDataResult<Project> projectExists = uow.Project.GetProject(id);
+            if (!projectExists.Success)
+                return NotFound(response, localizer[projectExists.Message]);
+            IResult projectDeleted = uow.Project.Delete(projectExists.Data);
+            if (!projectDeleted.Success)
+                return NotFound(response, localizer[projectDeleted.Message]);
+            if (!uow.Commit())
+                return NotFound(response);
+            response.IsDeleted = true;
+            return Ok(response);
         }
     }
 }

@@ -59,5 +59,13 @@ namespace WFEngine.Service.Repositories
                 return new ErrorResult(Messages.Project.NotUpdatedProject);
             return new SuccessResult();
         }
+
+        public IResult Delete(Project project)
+        {
+            bool isDeleted = connection.Delete(project);
+            if (isDeleted)
+                return new SuccessResult();
+            return new ErrorResult(Messages.Project.NotDeletedProject);
+        }
     }
 }

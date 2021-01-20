@@ -82,7 +82,8 @@ namespace WFEngine.Service.Repositories
 
         public IDataResult<List<SolutionCollaborator>> GetSolutionCollaborators(int solutionId)
         {
-            var result = connection.ExecuteCommand<SolutionCollaborator>(@"SELECT  
+            var result = connection.ExecuteCommand<SolutionCollaborator>(@"SELECT 
+            sc.Id,
             (SELECT ct.GlobalName FROM collaboratortype ct WHERE ct.Id = sc.CollaboratorTypeId) AS CollaboratorTypeName,
             (SELECT o.Name FROM organization o WHERE o.Id = u.OrganizationId) AS OrganizationName,
             u.name AS  UserName,
