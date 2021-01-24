@@ -244,6 +244,25 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
+        <member name="T:WFEngine.Api.Controllers.WFObjectController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:WFEngine.Api.Controllers.WFObjectController.localizer">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.WFObjectController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.WFObjectResource})">
+            <summary>
+            
+            </summary>
+            <param name="_uow"></param>
+            <param name="_mapper"></param>
+            <param name="_baseLocalizer"></param>
+            <param name="_localizer"></param>
+        </member>
         <member name="T:WFEngine.Api.Dto.Request.Auth.LoginRequestDTO">
             <summary>
             
@@ -624,7 +643,7 @@
             
             </summary>
         </member>
-        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.Solutions">
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.WFObjects">
             <summary>
             
             </summary>
@@ -679,17 +698,32 @@
             
             </summary>
         </member>
-        <member name="T:WFEngine.Api.Dto.Response.Project.GetProjectResponse.Solution">
+        <member name="T:WFEngine.Api.Dto.Response.Project.GetProjectResponse.WFObject">
             <summary>
             
             </summary>
         </member>
-        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.Solution.Id">
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.WFObject.Id">
             <summary>
             
             </summary>
         </member>
-        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.Solution.Name">
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.WFObject.WFObjectTypeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.WFObject.WFObjectTypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.WFObject.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.WFObject.Value">
             <summary>
             
             </summary>
@@ -1206,6 +1240,11 @@
             </summary>
         </member>
         <member name="T:WFEngine.Api.SolutionResource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.WFObjectResource">
             <summary>
             
             </summary>

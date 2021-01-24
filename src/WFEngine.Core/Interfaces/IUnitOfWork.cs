@@ -9,6 +9,8 @@ namespace WFEngine.Core.Interfaces
         ISolutionRepository Solution { get; }
         IProjectRepository Project { get; }
         IPackageVersionRepository PackageVersion { get; }
+        IWFObjectRepository WFObject { get; }
+
         bool Commit();
         bool Rollback();
     }

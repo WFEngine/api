@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using WFEngine.Api.Dto.Request.Project;
@@ -114,8 +115,23 @@ namespace WFEngine.Api.Controllers
                 SolutionId = project.SolutionId,
                 SolutionName = project.SolutionName
             };
+
+            IDataResult<List<WFObject>> wfObjects = uow.WFObject.GetWFObjects(projectId);
+
+            if (wfObjects.Data != null && wfObjects.Data.Any())
+            {
+                response.WFObjects = wfObjects.Data.Select(x => new GetProjectResponse.WFObject
+                {
+                    Id = x.Id,
+                    WFObjectTypeId = x.WfObjectTypeId,
+                    WFObjectTypeName = x.WFObjectTypeName,
+                    Name = x.Name,
+                    Value = string.IsNullOrEmpty(x.Value) ? JsonConvert.SerializeObject(new { }) : x.Value,
+                }).ToList();
+            }
+
             return Ok(response);
-        }        
+        }
 
         /// <summary>
         /// 
@@ -125,7 +141,7 @@ namespace WFEngine.Api.Controllers
         /// <returns></returns>
         [HttpPut("update/{id}")]
         [WFSolutionCollaboratorWrite]
-        public IActionResult Update(int id,[FromBody]UpdateProjectRequestDTO dto)
+        public IActionResult Update(int id, [FromBody] UpdateProjectRequestDTO dto)
         {
             UpdateProjectResponse response = new UpdateProjectResponse();
             IDataResult<Project> projectExists = uow.Project.GetProject(id);

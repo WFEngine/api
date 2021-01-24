@@ -14,7 +14,7 @@ namespace WFEngine.Api.Dto.Response.Project
         /// <summary>
         /// 
         /// </summary>
-        public List<Solution> Solutions { get; set; }
+        public List<WFObject> WFObjects { get; set; }
 
         /// <summary>
         /// 
@@ -62,24 +62,36 @@ namespace WFEngine.Api.Dto.Response.Project
         /// <summary>
         /// 
         /// </summary>
-        public sealed class Solution
+        public sealed class WFObject
         {
             /// <summary>
             /// 
             /// </summary>
-            public int Id { get; set; }
+            public int Id { get; set; }            
+            /// <summary>
+            /// 
+            /// </summary>
+            public int WFObjectTypeId { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string WFObjectTypeName { get; set; }
             /// <summary>
             /// 
             /// </summary>
             public string Name { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string Value { get; set; }            
         }
-       
+
         /// <summary>
         /// 
         /// </summary>
         public GetProjectResponse()
         {
-            Solutions = new List<Solution>();
+            WFObjects = new List<WFObject>();
         }
     }
 }

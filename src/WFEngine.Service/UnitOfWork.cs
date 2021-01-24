@@ -18,6 +18,7 @@ namespace WFEngine.Service
         ISolutionRepository _solution;
         IProjectRepository _project;
         IPackageVersionRepository _packageVersion;
+        IWFObjectRepository _wfObjectRepository;
 
         bool disposed;
 
@@ -77,6 +78,14 @@ namespace WFEngine.Service
             }
         }
 
+        public IWFObjectRepository WFObject
+        {
+            get
+            {
+                return _wfObjectRepository ?? (_wfObjectRepository = new WFObjectRepository(transaction));
+            }
+        }
+
         public bool Commit()
         {
             bool rtn = false;
@@ -129,7 +138,12 @@ namespace WFEngine.Service
 
         private void resetRepositories()
         {
-
+            _organization = null;
+            _user = null;
+            _solution = null;
+            _project = null;
+            _packageVersion = null;
+            _wfObjectRepository = null;
         }
 
         private void dispose(bool disposing)

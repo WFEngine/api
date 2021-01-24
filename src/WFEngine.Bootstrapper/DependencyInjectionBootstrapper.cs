@@ -16,6 +16,7 @@ namespace WFEngine.Bootstrapper
             services.AddScoped<ISolutionRepository, SolutionRepository>();
             services.AddScoped<IProjectRepository, ProjectRepository>();
             services.AddScoped<IPackageVersionRepository, PackageVersionRepository>();
+            services.AddScoped<IWFObjectRepository, WFObjectRepository>();
             return services;
         }
     }

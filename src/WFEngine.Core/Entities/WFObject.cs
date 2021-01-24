@@ -12,10 +12,21 @@ namespace WFEngine.Core.Entities
         /// <summary>
         /// 
         /// </summary>
+        public int SolutionId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int ProjectId { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public string Name { get; set; }
         /// <summary>
         /// 
         /// </summary>
         public string Value { get; set; }
+
+        [Write(false)]
+        public string WFObjectTypeName { get; set; }
     }
 }
