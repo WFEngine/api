@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using WFEngine.Api.Dto.Request.Auth;
 using WFEngine.Api.Dto.Request.Project;
 using WFEngine.Api.Dto.Request.Solution;
+using WFEngine.Api.Dto.Request.WFObject;
 using WFEngine.Bootstrapper;
 
 namespace WFEngine.Api
@@ -39,7 +40,9 @@ namespace WFEngine.Api
                 typeof(InsertSolutionRequestDTO),
                 typeof(InsertProjectRequestDTO),
                 typeof(UpdateSolutionRequestDTO),
-                typeof(UpdateProjectRequestDTO)
+                typeof(UpdateProjectRequestDTO),
+                typeof(InsertWFObjectRequestDTO),
+                typeof(UpdateWFObjectRequestDTO)
             });
             services.AddDependencyInjection();
             services.AddLocalizationMessage();

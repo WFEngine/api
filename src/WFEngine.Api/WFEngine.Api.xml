@@ -254,7 +254,7 @@
             
             </summary>
         </member>
-        <member name="M:WFEngine.Api.Controllers.WFObjectController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.WFObjectResource})">
+        <member name="M:WFEngine.Api.Controllers.WFObjectController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.WFObjectResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.ProjectResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.SolutionResource})">
             <summary>
             
             </summary>
@@ -262,6 +262,41 @@
             <param name="_mapper"></param>
             <param name="_baseLocalizer"></param>
             <param name="_localizer"></param>
+            <param name="_projectLocalizer"></param>
+            <param name="_solutionLocalizer"></param>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.WFObjectController.Insert(System.Int32,WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestDTO)">
+            <summary>
+            
+            </summary>
+            <param name="ProjectId"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.WFObjectController.Delete(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ProjectId"></param>
+            <param name="WFObjectId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.WFObjectController.Get(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ProjectId"></param>
+            <param name="WFObjectId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.WFObjectController.Update(System.Int32,System.Int32,WFEngine.Api.Dto.Request.WFObject.UpdateWFObjectRequestDTO)">
+            <summary>
+            
+            </summary>
+            <param name="ProjectId"></param>
+            <param name="WFObjectId"></param>
+            <param name="dto"></param>
+            <returns></returns>
         </member>
         <member name="T:WFEngine.Api.Dto.Request.Auth.LoginRequestDTO">
             <summary>
@@ -454,6 +489,61 @@
             </summary>
         </member>
         <member name="M:WFEngine.Api.Dto.Request.Solution.UpdateSolutionRequestValidator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestDTO.WfObjectTypeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestDTO.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestDTO.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestValidator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.WFObject.UpdateWFObjectRequestDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.WFObject.UpdateWFObjectRequestDTO.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.WFObject.UpdateWFObjectRequestDTO.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.WFObject.UpdateWFObjectRequestValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.WFObject.UpdateWFObjectRequestValidator.#ctor">
             <summary>
             
             </summary>
@@ -1079,6 +1169,91 @@
             </summary>
         </member>
         <member name="M:WFEngine.Api.Dto.Response.Solution.UpdateSolutionResponse.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.WFObject.DeleteWFObjectResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.WFObject.DeleteWFObjectResponse.IsDeleted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Response.WFObject.DeleteWFObjectResponse.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse.WFObject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse.WFObjectItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse.WFObjectItem.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse.WFObjectItem.WfObjectTypeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse.WFObjectItem.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse.WFObjectItem.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.WFObject.InsertWFObjectResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.WFObject.InsertWFObjectResponse.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Response.WFObject.InsertWFObjectResponse.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.WFObject.UpdateWFObjectResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.WFObject.UpdateWFObjectResponse.IsUpdated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Response.WFObject.UpdateWFObjectResponse.#ctor">
             <summary>
             
             </summary>

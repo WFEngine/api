@@ -2,6 +2,7 @@
 using WFEngine.Api.Dto.Request.Auth;
 using WFEngine.Api.Dto.Request.Project;
 using WFEngine.Api.Dto.Request.Solution;
+using WFEngine.Api.Dto.Request.WFObject;
 using WFEngine.Core.Entities;
 
 namespace WFEngine.Api.AutoMapper
@@ -21,6 +22,7 @@ namespace WFEngine.Api.AutoMapper
             CreateMap<InsertSolutionRequestDTO, Solution>();
             CreateMap<InsertProjectRequestDTO, Project>();
             CreateMap<UpdateProjectRequestDTO, Project>();
+            CreateMap<InsertWFObjectRequestDTO, WFObject>();
         }
     }
 }

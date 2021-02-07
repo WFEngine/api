@@ -12,5 +12,29 @@ namespace WFEngine.Core.Interfaces
         /// <param name="projectId"></param>
         /// <returns></returns>
         IDataResult<List<WFObject>> GetWFObjects(int projectId);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="wfObject"></param>
+        /// <returns></returns>
+        IResult Insert(WFObject wfObject);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        IDataResult<WFObject> FindWFObjectById(int id);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="wfObject"></param>
+        /// <returns></returns>
+        IResult Delete(WFObject wfObject);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="wfObject"></param>
+        /// <returns></returns>
+        IResult Update(WFObject wfObject);
     }
 }

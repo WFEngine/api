@@ -44,5 +44,13 @@
             public static string NotUpdatedProject => "NotUpdatedProject";
             public static string NotDeletedProject => "NotDeletedProject";
         }
+
+        public sealed class WFObject
+        {
+            public static string NotCreateWFObject => "NotCreatedWFObject";
+            public static string NotFoundWFObject => "NotFoundWFObject";
+            public static string NotDeletedWFObject => "NotDeletedWFObject";
+            public static string NotUpdatedWFObject => "NotUpdatedWFObject";
+        }
     }
 }
