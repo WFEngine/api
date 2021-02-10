@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\activities.core\src\WFEngine.Activities.Core\WFEngine.Activities.Core.csproj" />
     <ProjectReference Include="..\WFEngine.Bootstrapper\WFEngine.Bootstrapper.csproj" />
     <ProjectReference Include="..\WFEngine.Core\WFEngine.Core.csproj" />
     <ProjectReference Include="..\WFEngine.Service\WFEngine.Service.csproj" />

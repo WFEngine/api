@@ -94,6 +94,18 @@ namespace WFEngine.Api.Dto.Response.Solution
             /// 
             /// </summary>
             public string ProjectType { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public List<WFObject> WFObjects { get; set; }
+
+            /// <summary>
+            /// 
+            /// </summary>
+            public Project()
+            {
+                WFObjects = new List<WFObject>();
+            }
         }
 
 
@@ -126,6 +138,33 @@ namespace WFEngine.Api.Dto.Response.Solution
             /// 
             /// </summary>
             public string Avatar { get; set; }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public sealed class WFObject
+        {
+            /// <summary>
+            /// 
+            /// </summary>
+            public int Id { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public int WfObjectTypeId { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string Name { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string Description { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
+            public string Value { get; set; }
         }
     }
 }

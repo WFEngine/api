@@ -508,6 +508,11 @@
             
             </summary>
         </member>
+        <member name="P:WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestDTO.Description">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestDTO.#ctor">
             <summary>
             
@@ -529,6 +534,11 @@
             </summary>
         </member>
         <member name="P:WFEngine.Api.Dto.Request.WFObject.UpdateWFObjectRequestDTO.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.WFObject.UpdateWFObjectRequestDTO.Description">
             <summary>
             
             </summary>
@@ -813,6 +823,11 @@
             
             </summary>
         </member>
+        <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.WFObject.Description">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:WFEngine.Api.Dto.Response.Project.GetProjectResponse.WFObject.Value">
             <summary>
             
@@ -998,6 +1013,16 @@
             
             </summary>
         </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.Project.WFObjects">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.Project.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.Colllaborator">
             <summary>
             
@@ -1029,6 +1054,36 @@
             </summary>
         </member>
         <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.Colllaborator.Avatar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.WFObject">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.WFObject.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.WFObject.WfObjectTypeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.WFObject.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.WFObject.Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Solution.GetSolutionResponse.WFObject.Value">
             <summary>
             
             </summary>
@@ -1214,6 +1269,11 @@
             </summary>
         </member>
         <member name="P:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse.WFObjectItem.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.WFObject.GetWFObjectResponse.WFObjectItem.Description">
             <summary>
             
             </summary>

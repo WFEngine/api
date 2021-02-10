@@ -30,6 +30,10 @@
             /// <summary>
             /// 
             /// </summary>
+            public string Description { get; set; }
+            /// <summary>
+            /// 
+            /// </summary>
             public string Value { get; set; }
         }
 

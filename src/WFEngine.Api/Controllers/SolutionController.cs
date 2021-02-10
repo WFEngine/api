@@ -164,7 +164,15 @@ namespace WFEngine.Api.Controllers
                 Id = x.Id,
                 Name = x.Name,
                 Description = x.Description,
-                ProjectType = projectTypes.FirstOrDefault(y=>y.Id == x.ProjectTypeId)?.GlobalName
+                ProjectType = projectTypes.FirstOrDefault(y => y.Id == x.ProjectTypeId)?.GlobalName,
+                WFObjects = uow.WFObject.GetWFObjects(x.Id)?.Data?.Select(y => new GetSolutionResponse.WFObject
+                {
+                    Id = y.Id,
+                    Name = y.Name,
+                    Description = y.Description,
+                    Value = y.Value,
+                    WfObjectTypeId = y.WfObjectTypeId
+                }).ToList()
             }).ToList();
             response.solution.Collaborators = uow.Solution.GetSolutionCollaborators(id).Data.Select(x => new GetSolutionResponse.Colllaborator
             {
@@ -186,7 +194,7 @@ namespace WFEngine.Api.Controllers
         /// <returns></returns>
         [HttpPut("update/{id}")]
         [WFSolutionOwner]
-        public IActionResult Update(int id,[FromBody]UpdateSolutionRequestDTO dto)
+        public IActionResult Update(int id, [FromBody] UpdateSolutionRequestDTO dto)
         {
             UpdateSolutionResponse response = new UpdateSolutionResponse();
             IDataResult<Solution> solutionExists = uow.Solution.FindSolutionById(id);

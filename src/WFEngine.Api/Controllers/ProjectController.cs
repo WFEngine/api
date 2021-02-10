@@ -126,6 +126,7 @@ namespace WFEngine.Api.Controllers
                     WFObjectTypeId = x.WfObjectTypeId,
                     WFObjectTypeName = x.WFObjectTypeName,
                     Name = x.Name,
+                    Description = x.Description,
                     Value = string.IsNullOrEmpty(x.Value) ? JsonConvert.SerializeObject(new { }) : x.Value,
                 }).ToList();
             }

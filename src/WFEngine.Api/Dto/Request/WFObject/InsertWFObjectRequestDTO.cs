@@ -15,6 +15,10 @@ namespace WFEngine.Api.Dto.Request.WFObject
         /// 
         /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Description { get; set; }
 
         /// <summary>
         /// 

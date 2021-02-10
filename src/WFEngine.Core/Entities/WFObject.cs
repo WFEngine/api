@@ -1,4 +1,5 @@
 ﻿using Dapper.Contrib.Extensions;
+using System;
 
 namespace WFEngine.Core.Entities
 {
@@ -20,7 +21,15 @@ namespace WFEngine.Core.Entities
         /// <summary>
         /// 
         /// </summary>
+        public string UniqueKey { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public string Name { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Description { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -28,5 +37,10 @@ namespace WFEngine.Core.Entities
 
         [Write(false)]
         public string WFObjectTypeName { get; set; }
+
+        public WFObject()
+        {
+            UniqueKey = Guid.NewGuid().ToString();
+        }
     }
 }
