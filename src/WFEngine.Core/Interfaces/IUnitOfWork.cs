@@ -10,6 +10,8 @@ namespace WFEngine.Core.Interfaces
         IProjectRepository Project { get; }
         IPackageVersionRepository PackageVersion { get; }
         IWFObjectRepository WFObject { get; }
+        IActivityRepository Activity { get; }
+        IActivityTypeRepository ActivityType { get; }
 
         bool Commit();
         bool Rollback();

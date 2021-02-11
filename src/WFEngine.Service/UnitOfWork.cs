@@ -19,6 +19,8 @@ namespace WFEngine.Service
         IProjectRepository _project;
         IPackageVersionRepository _packageVersion;
         IWFObjectRepository _wfObjectRepository;
+        IActivityRepository _activityRepository;
+        IActivityTypeRepository _activityTypeRepository;
 
         bool disposed;
 
@@ -86,6 +88,22 @@ namespace WFEngine.Service
             }
         }
 
+        public IActivityRepository Activity
+        {
+            get
+            {
+                return _activityRepository ?? (_activityRepository = new ActivityRepository(transaction));
+            }
+        }
+
+        public IActivityTypeRepository ActivityType
+        {
+            get
+            {
+                return _activityTypeRepository ?? (_activityTypeRepository = new ActivityTypeRepository(transaction));
+            }
+        }
+
         public bool Commit()
         {
             bool rtn = false;
@@ -144,6 +162,8 @@ namespace WFEngine.Service
             _project = null;
             _packageVersion = null;
             _wfObjectRepository = null;
+            _activityRepository = null;
+            _activityTypeRepository = null;
         }
 
         private void dispose(bool disposing)
