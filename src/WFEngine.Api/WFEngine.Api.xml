@@ -267,6 +267,29 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
+        <member name="T:WFEngine.Api.Controllers.VariableTypeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.VariableTypeController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.VariableTypeResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.SolutionResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.ProjectResource})">
+            <summary>
+            
+            </summary>
+            <param name="_uow"></param>
+            <param name="_mapper"></param>
+            <param name="_baseLocalizer"></param>
+            <param name="_localizer"></param>
+            <param name="_solutionLocalizer"></param>
+            <param name="_projectLocalizer"></param>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.VariableTypeController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="projectId"></param>
+            <returns></returns>
+        </member>
         <member name="T:WFEngine.Api.Controllers.WFObjectController">
             <summary>
             
@@ -1316,6 +1339,41 @@
             
             </summary>
         </member>
+        <member name="T:WFEngine.Api.Dto.Response.VariableType.GetVariableTypeResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.VariableType.GetVariableTypeResponse.VariableTypes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.VariableType.GetVariableTypeResponse.VariableTypeItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.VariableType.GetVariableTypeResponse.VariableTypeItem.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.VariableType.GetVariableTypeResponse.VariableTypeItem.PackageVersionName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.VariableType.GetVariableTypeResponse.VariableTypeItem.Type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Response.VariableType.GetVariableTypeResponse.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:WFEngine.Api.Dto.Response.WFObject.DeleteWFObjectResponse">
             <summary>
             
@@ -1573,6 +1631,11 @@
             </summary>
         </member>
         <member name="T:WFEngine.Api.SolutionResource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.VariableTypeResource">
             <summary>
             
             </summary>

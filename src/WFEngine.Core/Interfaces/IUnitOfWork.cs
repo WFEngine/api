@@ -12,6 +12,7 @@ namespace WFEngine.Core.Interfaces
         IWFObjectRepository WFObject { get; }
         IActivityRepository Activity { get; }
         IActivityTypeRepository ActivityType { get; }
+        IVariableTypeRepository VariableType { get; }
 
         bool Commit();
         bool Rollback();

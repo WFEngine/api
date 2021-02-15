@@ -10,8 +10,6 @@ namespace WFEngine.Api.Controllers
     /// <summary>
     /// 
     /// </summary>
-    [Route("api/[controller]")]
-    [ApiController]
     public class PackageVersionController : BaseController
     {
         readonly IStringLocalizer<PackageVersionResource> localizer;

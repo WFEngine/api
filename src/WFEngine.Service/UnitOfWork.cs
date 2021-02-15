@@ -21,6 +21,7 @@ namespace WFEngine.Service
         IWFObjectRepository _wfObjectRepository;
         IActivityRepository _activityRepository;
         IActivityTypeRepository _activityTypeRepository;
+        IVariableTypeRepository _variableTypeRepository;
 
         bool disposed;
 
@@ -101,6 +102,14 @@ namespace WFEngine.Service
             get
             {
                 return _activityTypeRepository ?? (_activityTypeRepository = new ActivityTypeRepository(transaction));
+            }
+        }
+
+        public IVariableTypeRepository VariableType
+        {
+            get
+            {
+                return _variableTypeRepository ?? (_variableTypeRepository = new VariableTypeRepository(transaction));
             }
         }
 
