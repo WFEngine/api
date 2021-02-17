@@ -73,16 +73,8 @@ namespace WFEngine.Api.Controllers
                     IResult loginUser = uow.User.LogIn(dto.Email, dto.Password);
                     if (!loginUser.Success)
                         return NotFound(baseResult, userLocalizer[loginUser.Message]);
-                    baseResult.OrganizationId = organization.Id;
-                    baseResult.OrganizationName = organization.Name;
-                    baseResult.UserId = user.Id;
-                    baseResult.Name = user.Name;
-                    baseResult.Email = user.Email;
-                    baseResult.PhoneNumber = user.PhoneNumber;
-                    baseResult.Avatar = user.Avatar;
-                    baseResult.TwoFactorEnabled = user.TwoFactorEnabled;
-                    baseResult.EmailVerificated = user.EmailVerificated;
-                    baseResult.LanguageId = (int)user.LanguageId;
+                    mapper.Map(organization, baseResult);
+                    mapper.Map(user, baseResult);
                     baseResult.Token = loginUser.Message;                    
                     baseResult.ExpireDate = DateTime.Now.AddDays(1);                    
                     break;
@@ -116,14 +108,15 @@ namespace WFEngine.Api.Controllers
             if (!organizationCreated.Success)
                 return NotFound(baseResult, organizationLocalizer[organizationCreated.Message]);
             User user = mapper.Map<User>(dto);
+            mapper.Map(organization, user);
             user.OrganizationId = organization.Id;
             IResult userCreated = uow.User.Insert(user);
             if (!userCreated.Success)
                 return NotFound(baseResult, userLocalizer[userCreated.Message]);
             if (!uow.Commit())
                 return NotFound(baseResult);
-            baseResult.OrganizationId = organization.Id;
-            baseResult.UserId = user.Id;
+            mapper.Map(organization, baseResult);
+            mapper.Map(user, baseResult);
             return Ok(baseResult);
         }
 
@@ -232,16 +225,8 @@ namespace WFEngine.Api.Controllers
             if (!organizationExists.Success)
                 return NotFound(baseResult, organizationLocalizer[organizationExists.Message]);
             var organization = organizationExists.Data;
-            baseResult.OrganizationId = organization.Id;
-            baseResult.OrganizationName = organization.Name;
-            baseResult.UserId = user.Id;
-            baseResult.Name = user.Name;
-            baseResult.Email = user.Email;
-            baseResult.PhoneNumber = user.PhoneNumber;
-            baseResult.Avatar = user.Avatar;
-            baseResult.TwoFactorEnabled = user.TwoFactorEnabled;
-            baseResult.EmailVerificated = user.EmailVerificated;
-            baseResult.LanguageId = (int)user.LanguageId;
+            mapper.Map(user, baseResult);
+            mapper.Map(organization, baseResult);
             return Ok(baseResult);
         }
 

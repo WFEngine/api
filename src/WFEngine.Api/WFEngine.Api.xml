@@ -14,6 +14,30 @@
             
             </summary>
         </member>
+        <member name="T:WFEngine.Api.AutoMapper.MapperExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.AutoMapper.MapperExtension.IgnorePrimaryKey``2(AutoMapper.IMappingExpression{``0,``1})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TDestination"></typeparam>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WFEngine.Api.AutoMapper.MapperExtension.IgnoreKeys``2(AutoMapper.IMappingExpression{``0,``1},System.Collections.Generic.List{System.String})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TDestination"></typeparam>
+            <param name="expression"></param>
+            <param name="includeItems"></param>
+            <returns></returns>
+        </member>
         <member name="T:WFEngine.Api.Controllers.ActivityController">
             <summary>
             

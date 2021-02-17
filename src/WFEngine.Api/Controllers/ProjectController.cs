@@ -77,15 +77,14 @@ namespace WFEngine.Api.Controllers
                 return NotFound(projectResponse, solutionLocalizer[solutionExists.Message]);
             Solution solution = solutionExists.Data;
             Project project = mapper.Map<Project>(dto);
-            project.SolutionId = solution.Id;
-            project.OrganizationId = solution.OrganizationId;
-            project.CreatorId = user.Id;
+            mapper.Map(solution, project);
+            mapper.Map(user, project);
             IResult projectCreated = uow.Project.Insert(project);
             if (!projectCreated.Success)
                 return NotFound(projectResponse, localizer[projectCreated.Message]);
             if (!uow.Commit())
                 return NotFound(projectResponse);
-            projectResponse.Id = project.Id;
+            mapper.Map(project, projectResponse);
             return Ok(projectResponse);
         }
 
@@ -149,9 +148,7 @@ namespace WFEngine.Api.Controllers
             if (!projectExists.Success)
                 return NotFound(response, localizer[projectExists.Message]);
             Project project = projectExists.Data;
-            project.ProjectTypeId = dto.ProjectTypeId;
-            project.Name = dto.Name;
-            project.Description = dto.Description;
+            mapper.Map(dto, project);
             IResult isUpdated = uow.Project.Update(project);
             if (!isUpdated.Success)
                 return NotFound(response, localizer[isUpdated.Message]);

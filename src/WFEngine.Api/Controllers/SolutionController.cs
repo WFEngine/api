@@ -56,7 +56,8 @@ namespace WFEngine.Api.Controllers
             if (user == null)
                 return NotFound(baseResult, userLocalizer[Messages.User.NotFoundUser]);
             Solution solution = mapper.Map<Solution>(dto);
-            solution.OrganizationId = user.OrganizationId;
+            mapper.Map(user, solution);
+            //solution.OrganizationId = user.OrganizationId;
             IDataResult<Solution> solutionExists = uow.Solution.FindSolutionByName(dto.Name, user.OrganizationId);
             if (solutionExists.Success)
                 return NotFound(baseResult, localizer[Messages.Solution.AlreadyExistsSolution]);
@@ -65,7 +66,7 @@ namespace WFEngine.Api.Controllers
                 return NotFound(baseResult, localizer[solutionCreated.Message]);
             if (!uow.Commit())
                 return NotFound(baseResult);
-            baseResult.Id = solution.Id;
+            mapper.Map(solution, baseResult);
             return Ok(baseResult);
         }
 
