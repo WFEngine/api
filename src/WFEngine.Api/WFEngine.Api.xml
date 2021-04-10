@@ -54,13 +54,7 @@
             <param name="_projectLocalizer"></param>
             <param name="_solutionLocalizer"></param>
         </member>
-        <member name="M:WFEngine.Api.Controllers.ActivityController.GetActivities(System.Int32)">
-            <summary>
-            
-            </summary>
-            <param name="projectId"></param>
-            <returns></returns>
-        </member>
+        <!-- Badly formed XML comment ignored for member "M:WFEngine.Api.Controllers.ActivityController.GetActivities(System.Int32)" -->
         <member name="T:WFEngine.Api.Controllers.AuthController">
             <summary>
             Manages Session and User Transaction

@@ -48,12 +48,12 @@ namespace WFEngine.Api.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="projectId"></param>
+        /// <param nam  e="projectId"></param>
         /// <returns></returns>
         [HttpGet("get/{projectId}")]
         [WFProjectCollaborator]
         public IActionResult GetActivities(int projectId)
-        {
+        {            
             GetActivitiesResponse response = new GetActivitiesResponse();
             var projectExists = uow.Project.GetProject(projectId);
             if (!projectExists.Success)
