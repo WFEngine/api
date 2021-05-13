@@ -362,6 +362,15 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
+        <member name="M:WFEngine.Api.Controllers.WFObjectController.Save(System.Int32,System.Int32,WFEngine.Api.Dto.Request.WFObject.SaveWFObjectRequestDTO)">
+            <summary>
+            
+            </summary>
+            <param name="ProjectId"></param>
+            <param name="WfObjectId"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
         <member name="T:WFEngine.Api.Dto.Request.Auth.LoginRequestDTO">
             <summary>
             
@@ -588,6 +597,21 @@
             </summary>
         </member>
         <member name="M:WFEngine.Api.Dto.Request.WFObject.InsertWFObjectRequestValidator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.WFObject.SaveWFObjectRequestDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.WFObject.SaveWFObjectRequestDTO.Content">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.WFObject.SaveWFObjectRequestDTOValidator.#ctor">
             <summary>
             
             </summary>
@@ -1463,6 +1487,11 @@
             </summary>
         </member>
         <member name="M:WFEngine.Api.Dto.Response.WFObject.InsertWFObjectResponse.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.WFObject.SaveWFObjectResponse">
             <summary>
             
             </summary>

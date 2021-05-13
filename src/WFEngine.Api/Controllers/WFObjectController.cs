@@ -204,5 +204,47 @@ namespace WFEngine.Api.Controllers
             response.IsUpdated = isUpdated.Success;
             return Ok(response);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ProjectId"></param>
+        /// <param name="WfObjectId"></param>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        [HttpPut("save/{projectId}/{wfObjectId}")]
+        [WFSolutionCollaboratorWrite]
+        public IActionResult Save(int ProjectId,int WfObjectId,[FromBody]SaveWFObjectRequestDTO dto)
+        {
+            SaveWFObjectResponse response = new SaveWFObjectResponse();
+
+            IDataResult<Project> projectExists = uow.Project.GetProject(ProjectId);
+            if (!projectExists.Success)
+                return NotFound(response, projectLocalizer[projectExists.Message]);
+            Project project = projectExists.Data;
+
+            IDataResult<Solution> solutionExists = uow.Solution.FindSolutionById(project.SolutionId);
+            if (!solutionExists.Success)
+                return NotFound(response, solutionLocalizer[solutionExists.Message]);
+
+            IDataResult<WFObject> wfObjectExists = uow.WFObject.FindWFObjectById(WfObjectId);
+            if (!wfObjectExists.Success)
+                return NotFound(response, localizer[wfObjectExists.Message]);
+
+            WFObject wfObject = wfObjectExists.Data;
+            wfObject.Value = dto.Content;
+
+            IResult isUpdated = uow.WFObject.Update(wfObject);
+
+            if (!isUpdated.Success)
+                return NotFound(response, localizer[isUpdated.Message]);
+
+            if (!uow.Commit())
+                return NotFound(response);
+
+            response.IsUpdated = isUpdated.Success;
+
+            return Ok(response);
+        }
     }
 }
