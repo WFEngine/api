@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using WFEngine.Core.Interfaces;
 using WFEngine.Service;
+using WFEngine.Service.Channels;
 using WFEngine.Service.Repositories;
 
 namespace WFEngine.Bootstrapper
@@ -20,6 +21,13 @@ namespace WFEngine.Bootstrapper
             services.AddScoped<IActivityRepository, ActivityRepository>();
             services.AddScoped<IActivityTypeRepository, ActivityTypeRepository>();
             services.AddScoped<IVariableTypeRepository, VariableTypeRepository>();
+
+
+            /*Channels*/
+            services.AddSingleton<RecoveryPasswordChannel>();
+            /*Channels*/
+
+
             return services;
         }
     }

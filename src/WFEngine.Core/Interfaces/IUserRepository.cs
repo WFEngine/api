@@ -48,5 +48,11 @@ namespace WFEngine.Core.Interfaces
         /// <param name="token"></param>
         /// <returns></returns>
         IResult LogoutUser(string token);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        IResult UpdateUser(User user);
     }
 }

@@ -20,6 +20,7 @@
             public static string AlreadyExistsEmail => "AlreadyExistsEmail";
             public static string NotCreatedUser => "NotCreatedUser";
             public static string LoginUnsuccessful => "LoginUnsuccessful";
+            public static string UserNotUpdated => "UserNotUpdated";
         }
 
         public sealed class Solution

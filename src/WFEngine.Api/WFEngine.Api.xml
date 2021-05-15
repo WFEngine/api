@@ -60,7 +60,7 @@
             Manages Session and User Transaction
             </summary>
         </member>
-        <member name="M:WFEngine.Api.Controllers.AuthController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.OrganizationResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.UserResource})">
+        <member name="M:WFEngine.Api.Controllers.AuthController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.OrganizationResource},Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.UserResource},WFEngine.Service.Channels.RecoveryPasswordChannel)">
             <summary>
             
             </summary>
@@ -69,6 +69,7 @@
             <param name="_baseLocalizer"></param>
             <param name="_organizationLocalizer"></param>
             <param name="_userLocalizer"></param>
+            <param name="_passwordChannel"></param>
         </member>
         <member name="M:WFEngine.Api.Controllers.AuthController.LogIn(WFEngine.Api.Dto.Request.Auth.LoginRequestDTO)">
             <summary>
@@ -102,6 +103,13 @@
             <summary>
             
             </summary>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.AuthController.RecoveryPassword(WFEngine.Api.Dto.Request.Auth.RecoveryPasswordRequestDTO)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
         </member>
         <member name="T:WFEngine.Api.Controllers.BaseController">
             <summary>
@@ -397,6 +405,26 @@
             </summary>
         </member>
         <member name="M:WFEngine.Api.Dto.Request.Auth.LoginRequestDTOValidator.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Auth.RecoveryPasswordRequestDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.RecoveryPasswordRequestDTO.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Auth.RecoveryPasswordRequestValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.Auth.RecoveryPasswordRequestValidator.#ctor">
             <summary>
             
             </summary>
@@ -837,6 +865,16 @@
             </summary>
         </member>
         <member name="T:WFEngine.Api.Dto.Response.Auth.LogoutResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Auth.RecoveryPasswordResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.RecoveryPasswordResponse.IsEmailSending">
             <summary>
             
             </summary>

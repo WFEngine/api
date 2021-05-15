@@ -106,5 +106,13 @@ namespace WFEngine.Service.Repositories
                 return new ErrorResult();
             }
         }
+
+        public IResult UpdateUser(User user)
+        {
+            var isSuccess = connection.Update(user);
+            if (isSuccess)
+                return new SuccessResult();
+            return new ErrorResult(Messages.User.UserNotUpdated);
+        }
     }
 }

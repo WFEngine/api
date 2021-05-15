@@ -27,5 +27,13 @@ namespace WFEngine.Core.Utilities
         public string DesignerUrl => (string)configuration.GetValue(typeof(string), "web_url");
 
         public string RedisConnectionString => (string)configuration.GetValue(typeof(string), "redis_connection");
+
+        public string SmtpSender => (string)configuration.GetValue(typeof(string), "smtp_sender");
+
+        public string SmtpPassword => (string)configuration.GetValue(typeof(string), "smtp_password");
+
+        public string SmtpHost => (string)configuration.GetValue(typeof(string), "smtp_host");
+
+        public int SmtpPort => (int)configuration.GetValue(typeof(int), "smtp_port");
     }
 }

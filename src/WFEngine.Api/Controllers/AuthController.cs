@@ -14,6 +14,7 @@ using WFEngine.Core.Enums;
 using WFEngine.Core.Interfaces;
 using WFEngine.Core.Utilities;
 using WFEngine.Core.Utilities.Result;
+using WFEngine.Service.Channels;
 
 namespace WFEngine.Api.Controllers
 {
@@ -26,6 +27,8 @@ namespace WFEngine.Api.Controllers
 
         readonly IStringLocalizer<UserResource> userLocalizer;
 
+        readonly RecoveryPasswordChannel passwordChannel;
+
         /// <summary>
         /// 
         /// </summary>
@@ -34,17 +37,20 @@ namespace WFEngine.Api.Controllers
         /// <param name="_baseLocalizer"></param>
         /// <param name="_organizationLocalizer"></param>
         /// <param name="_userLocalizer"></param>
+        /// <param name="_passwordChannel"></param>
         public AuthController(
             IUnitOfWork _uow,
             IMapper _mapper,
             IStringLocalizer<BaseResource> _baseLocalizer,
             IStringLocalizer<OrganizationResource> _organizationLocalizer,
-            IStringLocalizer<UserResource> _userLocalizer
+            IStringLocalizer<UserResource> _userLocalizer,
+            RecoveryPasswordChannel _passwordChannel
             )
             : base(_uow, _mapper, _baseLocalizer)
         {
             organizationLocalizer = _organizationLocalizer;
             userLocalizer = _userLocalizer;
+            passwordChannel = _passwordChannel;
         }
 
         /// <summary>
@@ -69,14 +75,14 @@ namespace WFEngine.Api.Controllers
                     IDataResult<Organization> organizationExists = uow.Organization.FindById(user.OrganizationId);
                     if (!organizationExists.Success)
                         return NotFound(baseResult, organizationLocalizer[organizationExists.Message]);
-                    var organization = organizationExists.Data;                 
+                    var organization = organizationExists.Data;
                     IResult loginUser = uow.User.LogIn(dto.Email, dto.Password);
                     if (!loginUser.Success)
                         return NotFound(baseResult, userLocalizer[loginUser.Message]);
                     mapper.Map(organization, baseResult);
                     mapper.Map(user, baseResult);
-                    baseResult.Token = loginUser.Message;                    
-                    baseResult.ExpireDate = DateTime.Now.AddDays(1);                    
+                    baseResult.Token = loginUser.Message;
+                    baseResult.ExpireDate = DateTime.Now.AddDays(1);
                     break;
                 case Core.Enums.enumLoginType.Github:
                     baseResult.RedirectUrl = uow.User.GetGithubOAuthUrl();
@@ -193,10 +199,10 @@ namespace WFEngine.Api.Controllers
                 {
                     designerUrl += $"?status=error&token=";
                     return Redirect(designerUrl);
-                }              
+                }
 
             }
-            if(emailExists.Success && emailExists.Data.LoginTypeId != enumLoginType.Github)
+            if (emailExists.Success && emailExists.Data.LoginTypeId != enumLoginType.Github)
             {
                 designerUrl += $"?status=error&token=";
                 return Redirect(designerUrl);
@@ -246,8 +252,36 @@ namespace WFEngine.Api.Controllers
             IResult logouted = uow.User.LogoutUser(currentToken);
             if (!logouted.Success)
                 return NotFound(baseResult);
-            baseResult.logouted = true;            
+            baseResult.logouted = true;
             return Ok(baseResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
+        [HttpPost("recoverypassword")]
+        [WFAllowAnonymous]
+        public IActionResult RecoveryPassword([FromBody] RecoveryPasswordRequestDTO dto)
+        {
+            RecoveryPasswordResponse response = new RecoveryPasswordResponse();
+
+            var userExists = uow.User.FindByEmail(dto.Email);
+
+            if (!userExists.Success)
+                return NotFound(response, userLocalizer[userExists.Message]);
+
+            var user = userExists.Data;
+
+            if (user.LoginTypeId != enumLoginType.Default)
+                return NotFound(response);
+
+            passwordChannel.SendProducer(user.Email);
+
+            response.IsEmailSending = true;
+
+            return Ok(response);
         }
     }
 }
