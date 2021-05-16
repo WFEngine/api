@@ -15,6 +15,12 @@ namespace WFEngine.Core.Interfaces
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="solutionIds"></param>
+        /// <returns></returns>
+        IDataResult<List<Project>> GetProjectFromSolutionIds(List<int> solutionIds);
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="project"></param>
         /// <returns></returns>
         IResult Insert(Project project);

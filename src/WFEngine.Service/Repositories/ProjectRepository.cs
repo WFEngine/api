@@ -67,5 +67,12 @@ namespace WFEngine.Service.Repositories
                 return new SuccessResult();
             return new ErrorResult(Messages.Project.NotDeletedProject);
         }
+
+        public IDataResult<List<Project>> GetProjectFromSolutionIds(List<int> solutionIds)
+        {
+            string sql = $"SELECT * FROM project WHERE SolutionId IN ({string.Join(',',solutionIds)}) AND Status = 1";
+            var result = connection.ExecuteCommand<Project>(sql, solutionIds).ToList();
+            return new SuccessDataResult<List<Project>>(result);
+        }
     }
 }

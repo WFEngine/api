@@ -15,6 +15,12 @@ namespace WFEngine.Core.Interfaces
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="projectIds"></param>
+        /// <returns></returns>
+        IDataResult<List<WFObject>> GetWFObjects(List<int> projectIds);
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="wfObject"></param>
         /// <returns></returns>
         IResult Insert(WFObject wfObject);

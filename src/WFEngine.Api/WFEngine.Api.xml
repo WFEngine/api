@@ -172,6 +172,25 @@
             <param name="message"></param>
             <returns></returns>
         </member>
+        <member name="T:WFEngine.Api.Controllers.DashboardController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.DashboardController.#ctor(WFEngine.Core.Interfaces.IUnitOfWork,AutoMapper.IMapper,Microsoft.Extensions.Localization.IStringLocalizer{WFEngine.Api.BaseResource})">
+            <summary>
+            
+            </summary>
+            <param name="_uow"></param>
+            <param name="_mapper"></param>
+            <param name="_baseLocalizer"></param>
+        </member>
+        <member name="M:WFEngine.Api.Controllers.DashboardController.List">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:WFEngine.Api.Controllers.PackageVersionController">
             <summary>
             
@@ -890,6 +909,26 @@
             </summary>
         </member>
         <member name="P:WFEngine.Api.Dto.Response.Auth.RegisterResponse.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Dashboard.ListDashboardResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Dashboard.ListDashboardResponse.SolutionCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Dashboard.ListDashboardResponse.ProjectCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Dashboard.ListDashboardResponse.WorkflowCount">
             <summary>
             
             </summary>

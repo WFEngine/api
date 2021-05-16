@@ -56,5 +56,15 @@ namespace WFEngine.Service.Repositories
                 return new ErrorResult(Messages.WFObject.NotUpdatedWFObject);
             return new SuccessResult();
         }
+
+        public IDataResult<List<WFObject>> GetWFObjects(List<int> projectIds)
+        {
+            string sql = @"SELECT
+                wfo.*,
+            (SELECT wfot.GlobalName FROM wfobjecttype wfot WHERE wfot.Id = wfo.WfObjectTypeId) AS WFObjectTypeName
+            FROM wfobject wfo WHERE wfo.ProjectId IN ("+string.Join(',',projectIds)+") AND wfo.Status = 1 "; 
+            var wfObjects = connection.ExecuteCommand<WFObject>(sql, projectIds).ToList();
+            return new SuccessDataResult<List<WFObject>>(wfObjects);
+        }
     }
 }
