@@ -42,7 +42,10 @@ namespace WFEngine.Api
                 typeof(UpdateSolutionRequestDTO),
                 typeof(UpdateProjectRequestDTO),
                 typeof(InsertWFObjectRequestDTO),
-                typeof(UpdateWFObjectRequestDTO)
+                typeof(UpdateWFObjectRequestDTO),
+                typeof(SaveWFObjectRequestDTO),
+                typeof(ChangeLanguageRequestValidator),
+                typeof(RecoveryPasswordRequestDTO),
             });
             services.AddDependencyInjection();
             services.AddLocalizationMessage();
