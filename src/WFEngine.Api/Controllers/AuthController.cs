@@ -283,5 +283,34 @@ namespace WFEngine.Api.Controllers
 
             return Ok(response);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost("changelanguage")]
+        public IActionResult ChangeLanguage([FromBody]ChangeLanguageRequestDTO dto)
+        {
+            ChangeLanguageResponse response = new ChangeLanguageResponse();
+            var userId = CurrentUserId;
+            var userExists = uow.User.FindById(userId);
+            if (!userExists.Success)
+                return NotFound(response,userLocalizer[userExists.Message]);
+
+            var user = userExists.Data;
+            user.LanguageId = (enumLanguage)dto.LanguageId;
+
+            var userUpdated = uow.User.UpdateUser(user);
+
+            if (!userUpdated.Success)
+                return NotFound(response, userLocalizer[userUpdated.Message]);
+
+            if (!uow.Commit())
+                return NotFound(response);
+
+            response.IsLanguageChanged = userUpdated.Success;
+
+            return Ok(response);
+        }
     }
 }

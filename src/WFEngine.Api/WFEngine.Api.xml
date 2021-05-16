@@ -111,6 +111,12 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
+        <member name="M:WFEngine.Api.Controllers.AuthController.ChangeLanguage(WFEngine.Api.Dto.Request.Auth.ChangeLanguageRequestDTO)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:WFEngine.Api.Controllers.BaseController">
             <summary>
             
@@ -397,6 +403,26 @@
             <param name="WfObjectId"></param>
             <param name="dto"></param>
             <returns></returns>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Auth.ChangeLanguageRequestDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Request.Auth.ChangeLanguageRequestDTO.LanguageId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Request.Auth.ChangeLanguageRequestValidator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WFEngine.Api.Dto.Request.Auth.ChangeLanguageRequestValidator.#ctor">
+            <summary>
+            
+            </summary>
         </member>
         <member name="T:WFEngine.Api.Dto.Request.Auth.LoginRequestDTO">
             <summary>
@@ -754,6 +780,16 @@
             </summary>
         </member>
         <member name="P:WFEngine.Api.Dto.Response.Activity.GetActivitiesResponse.ActivityItem.ActivityName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WFEngine.Api.Dto.Response.Auth.ChangeLanguageResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WFEngine.Api.Dto.Response.Auth.ChangeLanguageResponse.IsLanguageChanged">
             <summary>
             
             </summary>
